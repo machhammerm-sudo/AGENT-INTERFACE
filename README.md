@@ -83,6 +83,20 @@ npm install
 
 ## Starten
 
+### Windows: per Doppelklick (einfachster Weg)
+
+Im Hauptordner liegen zwei Dateien:
+
+- **`Setup-Nauteron.bat`** — nur **einmalig** nötig, beim allerersten Mal (oder nach
+  einem Neu-Download des Projekts). Richtet Backend und Frontend komplett ein.
+  Trag danach, falls noch nicht geschehen, deinen API-Schlüssel in `backend/.env` ein.
+- **`Nauteron-Starten.bat`** — damit startest du die Anwendung ab jetzt **jedes Mal**.
+  Einfach doppelklicken: Backend und Frontend starten automatisch in zwei Fenstern,
+  und der Browser öffnet sich von selbst auf `http://localhost:5173`. Zum Beenden
+  reicht es, die beiden schwarzen Fenster zu schließen.
+
+### Manuell (macOS/Linux, oder wenn du lieber selbst tippst)
+
 Zwei Terminal-Fenster:
 
 **Terminal 1 — Backend:**
