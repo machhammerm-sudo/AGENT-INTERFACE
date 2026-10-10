@@ -95,6 +95,14 @@ Im Hauptordner liegen zwei Dateien:
   und der Browser öffnet sich von selbst auf `http://localhost:5173`. Zum Beenden
   reicht es, die beiden schwarzen Fenster zu schließen.
 
+### Eigenes Icon auf dem Desktop
+
+Damit du nicht jedes Mal in den Projektordner navigieren musst, gibt es eine dritte
+Datei: **`Desktop-Verknuepfung-erstellen.bat`**. Einmal doppelklicken, und auf deinem
+Desktop erscheint eine Verknüpfung namens **"Nauteron"** mit dem Nauteron-"N"-Icon
+(`assets/nauteron-icon.ico`) — die kannst du dir z.B. auch an die Windows-Taskleiste
+anheften. Ein Doppelklick darauf startet das Cockpit genauso wie `Nauteron-Starten.bat`.
+
 ### Manuell (macOS/Linux, oder wenn du lieber selbst tippst)
 
 Zwei Terminal-Fenster:
