@@ -72,6 +72,122 @@ export interface ContactRequest {
   created_at: string;
 }
 
+export interface DocCustomer {
+  id: number;
+  name: string;
+  created_at: string;
+}
+
+export interface ExtractionFieldDef {
+  id: number;
+  field_key: string;
+  label: string;
+  synonyms: string[];
+  format_regex: string | null;
+  is_user_edited: boolean;
+}
+
+export interface PrivacySettings {
+  customer_id: number;
+  contribute_anonymized_structure_data: boolean;
+  consent_given_at: string | null;
+  consent_withdrawn_at: string | null;
+  allow_cloud_escalation: boolean;
+  escalation_consent_at: string | null;
+}
+
+export type DocumentStatus = "uploaded" | "processing" | "processed" | "reviewed" | "error";
+export type FieldStatus = "green" | "yellow" | "red";
+
+export interface PlanDocument {
+  id: number;
+  customer_id: number | null;
+  filename: string;
+  status: DocumentStatus;
+  matched_pattern_id: number | null;
+  error_message: string | null;
+  uploaded_at: string;
+  processed_at: string | null;
+}
+
+export interface FieldCandidate {
+  value: string;
+  assignment_confidence: number;
+  ocr_confidence: number;
+  match_type: string;
+  label_score: number;
+  rel_bbox: number[];
+}
+
+export interface DocFieldResult {
+  id: number;
+  field_key: string;
+  label: string;
+  status: FieldStatus;
+  chosen_value: string | null;
+  chosen_source: string | null;
+  assignment_confidence: number | null;
+  ocr_confidence: number | null;
+  candidates: FieldCandidate[];
+  reviewed: boolean;
+  human_action: "confirmed" | "corrected" | null;
+  corrected_value: string | null;
+  reviewed_at: string | null;
+}
+
+export interface DocRegion {
+  id: number;
+  rel_x: number;
+  rel_y: number;
+  rel_w: number;
+  rel_h: number;
+  rotation: number;
+  score: number;
+  method: string;
+  is_chosen: boolean;
+}
+
+export interface DocumentDetail {
+  document: PlanDocument;
+  regions: DocRegion[];
+  fields: DocFieldResult[];
+}
+
+export interface LiveMetrics {
+  overall_correct_rate: number;
+  overall_n: number;
+  per_field: Record<string, { correct_rate: number; n: number }>;
+  per_pattern: Record<string, { correct_rate: number; n: number }>;
+  estimated_undetected_error_rate: number | null;
+  estimated_undetected_n: number;
+}
+
+export interface WeeklyHistoryPoint {
+  week: string;
+  correct_rate: number;
+  n: number;
+}
+
+export interface SampleCheck {
+  id: number;
+  document_id: number;
+  field_key: string;
+  sampled_at: string;
+  human_verdict: string | null;
+  reviewed_at: string | null;
+}
+
+export interface BenchmarkRun {
+  id: number;
+  run_at: string;
+  overall_hit_rate: number;
+  false_green_rate: number;
+  no_result_rate: number;
+  plan_count: number;
+  per_field: Record<string, { hit_rate: number; false_green_rate: number; no_result_rate: number; n: number }>;
+  per_template: Record<string, { hit_rate: number; false_green_rate: number; no_result_rate: number; n: number }>;
+}
+
 async function request<T>(path: string, options?: RequestInit): Promise<T> {
   const res = await fetch(`/api${path}`, {
     headers: options?.body instanceof FormData ? undefined : { "Content-Type": "application/json" },
@@ -132,5 +248,70 @@ export const api = {
     list: () => request<ContactRequest[]>("/contact-requests"),
     create: (data: { description: string; contact_name?: string; contact_info?: string }) =>
       request<ContactRequest>("/contact-requests", { method: "POST", body: JSON.stringify(data) }),
+  },
+  documents: {
+    customers: {
+      list: () => request<DocCustomer[]>("/documents/customers"),
+      create: (name: string) =>
+        request<DocCustomer>("/documents/customers", { method: "POST", body: JSON.stringify({ name }) }),
+    },
+    fields: {
+      list: () => request<ExtractionFieldDef[]>("/documents/fields"),
+      update: (id: number, data: { label?: string; synonyms?: string[]; format_regex?: string | null }) =>
+        request<ExtractionFieldDef>(`/documents/fields/${id}`, { method: "PATCH", body: JSON.stringify(data) }),
+    },
+    privacy: {
+      get: (customerId: number) => request<PrivacySettings>(`/documents/privacy/${customerId}`),
+      update: (customerId: number, data: Partial<Pick<PrivacySettings, "contribute_anonymized_structure_data" | "allow_cloud_escalation">>) =>
+        request<PrivacySettings>(`/documents/privacy/${customerId}`, { method: "PATCH", body: JSON.stringify(data) }),
+    },
+    list: (customerId?: number) =>
+      request<PlanDocument[]>(`/documents${customerId ? `?customer_id=${customerId}` : ""}`),
+    upload: async (file: File, customerId: number | null) => {
+      const form = new FormData();
+      form.append("file", file);
+      const qs = customerId ? `?customer_id=${customerId}` : "";
+      return request<DocumentDetail>(`/documents/upload${qs}`, { method: "POST", body: form });
+    },
+    get: (documentId: number) => request<DocumentDetail>(`/documents/${documentId}`),
+    regionImageUrl: (documentId: number) => `/api/documents/${documentId}/region-image`,
+    fieldCropUrl: (documentId: number, fieldKey: string) =>
+      `/api/documents/${documentId}/fields/${fieldKey}/crop`,
+    reviewField: (
+      documentId: number,
+      fieldKey: string,
+      data: { action: "confirm" | "correct"; candidate_index?: number; corrected_value?: string }
+    ) =>
+      request<DocFieldResult>(`/documents/${documentId}/fields/${fieldKey}/review`, {
+        method: "POST",
+        body: JSON.stringify(data),
+      }),
+    metrics: {
+      get: (customerId?: number, sinceDays?: number) => {
+        const params = new URLSearchParams();
+        if (customerId != null) params.set("customer_id", String(customerId));
+        if (sinceDays != null) params.set("since_days", String(sinceDays));
+        const qs = params.toString();
+        return request<LiveMetrics>(`/documents/metrics${qs ? `?${qs}` : ""}`);
+      },
+      history: (customerId?: number, weeks = 12) => {
+        const params = new URLSearchParams({ weeks: String(weeks) });
+        if (customerId != null) params.set("customer_id", String(customerId));
+        return request<WeeklyHistoryPoint[]>(`/documents/metrics/history?${params.toString()}`);
+      },
+    },
+    sampleChecks: {
+      list: (customerId?: number) =>
+        request<SampleCheck[]>(`/documents/sample-checks${customerId != null ? `?customer_id=${customerId}` : ""}`),
+      resolve: (id: number, verdict: "correct" | "incorrect") =>
+        request<SampleCheck>(`/documents/sample-checks/${id}/resolve`, {
+          method: "POST",
+          body: JSON.stringify({ verdict }),
+        }),
+    },
+    benchmark: {
+      history: () => request<BenchmarkRun[]>("/documents/benchmark/history"),
+      run: () => request<BenchmarkRun>("/documents/benchmark/run", { method: "POST" }),
+    },
   },
 };

@@ -11,6 +11,9 @@ DATA_DIR.mkdir(exist_ok=True)
 UPLOADS_DIR = DATA_DIR / "uploads"
 UPLOADS_DIR.mkdir(exist_ok=True)
 
+PLAN_UPLOADS_DIR = DATA_DIR / "plan_uploads"
+PLAN_UPLOADS_DIR.mkdir(exist_ok=True)
+
 DATABASE_PATH = DATA_DIR / "nauteron.db"
 DATABASE_URL = f"sqlite:///{DATABASE_PATH}"
 

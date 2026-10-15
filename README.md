@@ -57,6 +57,14 @@ zwischen deinen eigenen Geräten auf, ohne dass dein Laptop offen im Internet st
 - Python 3.11 oder neuer
 - Node.js 18 oder neuer
 - Ein Anthropic-API-Schlüssel
+- **Für die Dokument-Auslese (Titelblock-Erkennung, siehe unten):** Tesseract OCR muss
+  zusätzlich auf dem System installiert sein (ist kein Python-Paket, sondern ein
+  eigenständiges Programm):
+  - **Windows:** Installer von [github.com/UB-Mannheim/tesseract/wiki](https://github.com/UB-Mannheim/tesseract/wiki)
+    herunterladen, bei der Installation die deutsche Sprachdatei mit auswählen, und
+    "Tesseract zum PATH hinzufügen" aktivieren (falls als Option angezeigt).
+  - **macOS:** `brew install tesseract tesseract-lang`
+  - **Linux:** `sudo apt install tesseract-ocr tesseract-ocr-deu`
 
 ### Backend einrichten
 
@@ -147,11 +155,28 @@ Kategorien.
   mit Begründung "warum wichtig"; Rückschau-Bereich für bereits Erreichtes und
   gesparte Zeit.
 - **Integrationen-Übersicht** als Platzhalter für die neun geplanten Anbindungs-Kategorien.
+- **Dokument-Auslese ("Dokumente"-Seite)**: Eingescannte Pläne (PDF/Bild) hochladen,
+  Titelblock-Bereich wird automatisch gefunden (Rahmen-/Rastererkennung, unabhängig
+  von der Position auf dem Blatt, auch bei Drehung), Felder wie Bauherr, Maßstab oder
+  Datum werden per unscharfem Beschriftungs-Abgleich und Formaterkennung zugeordnet -
+  mit Ampel grün/gelb/rot statt stiller Fehlannahme. Rein lokal, nichts geht
+  standardmäßig in die Cloud.
+  - **Gedächtnis pro Kunde**: merkt sich bestätigte Feld-Positionen zu einem
+    wiedererkannten Titelblock-Muster (nur Struktur, keine Inhalte) und wird mit
+    jeder Bestätigung zuverlässiger.
+  - **Eskalation an Claude** nur als letzter Ausweg bei unsicheren Feldern, und nur
+    wenn der Datenschutz-Schalter des jeweiligen Kunden das ausdrücklich erlaubt
+    (standardmäßig aus).
+  - **Prüfstand**: `python -m app.documents.testbench.generate_synthetic_plans`
+    erzeugt Testpläne, `python -m app.documents.testbench.run_benchmark` misst
+    Trefferquote und - wichtiger - den Anteil falsch-grün markierter Felder; auch
+    über die Entwickleransicht auf der Dokumente-Seite auslösbar.
+  - **Laufende Kennzahl** auf der Dokumente-Seite zeigt, wie zuverlässig echte,
+    hochgeladene Pläne erkannt werden, inkl. Stichprobenkontrolle grüner Felder.
 
 ## Was als Nächstes sinnvoll ist (gemeinsamer Ausbau)
 
 - Google-Kalender-Anbindung für Thomas (erste echte Integration).
-- OCR-Anbindung für eingescannte Dokumente.
 - Die Weekly Agenda automatisch durch die Agenten befüllen lassen (aktuell nur über die API anlegbar).
 - Clara aktiv Hinweise erzeugen lassen (Update-Check, Backup-Erinnerung, Protokoll
   auffälliger Aktivität) statt nur als Chat-Agentin bereitzustehen.

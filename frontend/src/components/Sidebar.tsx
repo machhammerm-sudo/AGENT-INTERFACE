@@ -5,6 +5,7 @@ const links = [
   { to: "/agenten", label: "Agenten" },
   { to: "/ziele", label: "Ziele & Fortschritt" },
   { to: "/kategorien", label: "Kategorien" },
+  { to: "/dokumente", label: "Dokumente" },
   { to: "/integrationen", label: "Integrationen" },
 ];
 

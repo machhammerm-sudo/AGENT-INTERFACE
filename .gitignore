@@ -4,9 +4,9 @@ backend/.env
 backend/data/nauteron.db
 backend/data/uploads/*
 !backend/data/uploads/.gitkeep
-backend/__pycache__/
-backend/app/__pycache__/
-backend/app/routers/__pycache__/
+backend/data/plan_uploads/*
+!backend/data/plan_uploads/.gitkeep
+**/__pycache__/
 *.pyc
 
 # Frontend

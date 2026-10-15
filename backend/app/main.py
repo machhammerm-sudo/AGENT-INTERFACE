@@ -3,6 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from . import models
 from .database import Base, SessionLocal, engine
+from .documents import models as document_models  # noqa: F401 - registriert die Tabellen bei create_all
+from .documents.router import router as documents_router
+from .documents.seed import seed_defaults as seed_document_defaults
 from .routers import agenda, agents, achievements, categories, chat, contact, files, goals
 from .seed import seed_defaults
 
@@ -25,6 +28,7 @@ def on_startup():
     db = SessionLocal()
     try:
         seed_defaults(db)
+        seed_document_defaults(db)
     finally:
         db.close()
 
@@ -42,3 +46,4 @@ app.include_router(goals.router)
 app.include_router(achievements.router)
 app.include_router(contact.router)
 app.include_router(files.router)
+app.include_router(documents_router)

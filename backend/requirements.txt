@@ -5,3 +5,11 @@ anthropic==0.69.0
 python-dotenv==1.0.1
 pydantic==2.10.4
 python-multipart==0.0.20
+
+# Dokument-Auslese (P13): layoutunabhaengige Titelblock-Erkennung, rein lokal
+pypdfium2==5.14.0
+pytesseract==0.3.13
+opencv-python-headless==4.10.0.84
+rapidfuzz==3.10.1
+numpy==2.1.3
+Pillow==11.0.0

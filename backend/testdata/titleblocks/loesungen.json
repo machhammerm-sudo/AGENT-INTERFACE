@@ -1,0 +1,79 @@
+{
+  "bottom_right.png": {
+    "template_id": "bottom_right",
+    "fields": {
+      "bauherr": "Max Mustermann",
+      "bauvorhaben": "Neubau EFH",
+      "massstab": "1:100",
+      "datum": "12.03.2026",
+      "plannummer": "A-104",
+      "gemeinde": "Musterstadt"
+    }
+  },
+  "right_strip.png": {
+    "template_id": "right_strip",
+    "fields": {
+      "bauherr": "Max Mustermann",
+      "planverfasser": "Architekturbuero Nord",
+      "bauvorhaben": "Neubau EFH",
+      "massstab": "1:100",
+      "datum": "12.03.2026",
+      "plannummer": "A-104",
+      "index": "B"
+    }
+  },
+  "top.png": {
+    "template_id": "top",
+    "fields": {
+      "bauherr": "Max Mustermann",
+      "bauvorhaben": "Neubau EFH",
+      "gemeinde": "Musterstadt",
+      "datum": "12.03.2026"
+    }
+  },
+  "rotated.png": {
+    "template_id": "rotated",
+    "fields": {
+      "bauherr": "Max Mustermann",
+      "bauvorhaben": "Neubau EFH",
+      "massstab": "1:100",
+      "datum": "12.03.2026",
+      "plannummer": "A-104",
+      "gemeinde": "Musterstadt"
+    }
+  },
+  "noisy_stamps.png": {
+    "template_id": "noisy_stamps",
+    "fields": {
+      "bauherr": "Max Mustermann",
+      "bauvorhaben": "Neubau EFH",
+      "massstab": "1:100",
+      "datum": "12.03.2026",
+      "plannummer": "A-104",
+      "gemeinde": "Musterstadt"
+    }
+  },
+  "alt_labels.png": {
+    "template_id": "alt_labels",
+    "fields": {
+      "bauherr": "Max Mustermann",
+      "planverfasser": "Architekturbuero Nord",
+      "bauvorhaben": "Neubau EFH",
+      "gemeinde": "Musterstadt",
+      "massstab": "1:100",
+      "datum": "12.03.2026",
+      "plannummer": "A-104"
+    }
+  },
+  "with_errors.png": {
+    "template_id": "with_errors",
+    "fields": {
+      "bauherr": "Max Mustermann",
+      "bauvorhaben": "Neubau EFH",
+      "massstab": "1:100",
+      "datum": "12.03.2026",
+      "plannummer": "A-104",
+      "gemeinde": "Musterstadt"
+    }
+  }
+}
