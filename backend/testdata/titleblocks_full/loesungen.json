@@ -1,0 +1,596 @@
+{
+  "obj-a_sheet01_bottom_right.png": {
+    "template_id": "OBJ-A_bottom_right_dejavu",
+    "layout_type": "bottom_right",
+    "object_id": "OBJ-A",
+    "error_type": "inconsistent_flurstueck",
+    "notes": "Flurstueck weicht von den anderen Blaettern desselben Objekts ab (absichtlich).",
+    "fields": {
+      "bauherr": "Petra Gruber",
+      "planverfasser": "Architekturbuero Sued",
+      "bauvorhaben": "Anbau Garage",
+      "grundstuecksadresse": "Lindenweg 7",
+      "gemeinde": "Seehausen",
+      "flurstueck": "118/2X",
+      "plannummer": "OBJ-A-01",
+      "datum": "04.02.2026",
+      "massstab": "1:100",
+      "index": "A"
+    },
+    "split": "dev"
+  },
+  "obj-a_sheet02_right_strip.png": {
+    "template_id": "OBJ-A_right_strip_serif",
+    "layout_type": "right_strip",
+    "object_id": "OBJ-A",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Petra Gruber",
+      "planverfasser": "Architekturbuero Sued",
+      "bauvorhaben": "Anbau Garage",
+      "grundstuecksadresse": "Lindenweg 7",
+      "gemeinde": "Seehausen",
+      "flurstueck": "118/2",
+      "plannummer": "OBJ-A-02",
+      "datum": "11.02.2026",
+      "massstab": "1:50",
+      "index": "B"
+    },
+    "split": "dev"
+  },
+  "obj-a_sheet03_top.png": {
+    "template_id": "OBJ-A_top_freesans",
+    "layout_type": "top",
+    "object_id": "OBJ-A",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Petra Gruber",
+      "planverfasser": "Architekturbuero Sued",
+      "bauvorhaben": "Anbau Garage",
+      "grundstuecksadresse": "Lindenweg 7"
+    },
+    "split": "dev"
+  },
+  "obj-a_sheet04_rotated90.png": {
+    "template_id": "OBJ-A_rotated90_inter",
+    "layout_type": "rotated90",
+    "object_id": "OBJ-A",
+    "error_type": "missing_date",
+    "notes": "Plandatum fehlt auf dem Blatt (absichtlich).",
+    "fields": {
+      "bauherr": "Petra Gruber",
+      "planverfasser": "Architekturbuero Sued",
+      "bauvorhaben": "Anbau Garage",
+      "grundstuecksadresse": "Lindenweg 7",
+      "gemeinde": "Seehausen",
+      "flurstueck": "118/2",
+      "plannummer": "OBJ-A-04",
+      "massstab": "1:100",
+      "index": "A"
+    },
+    "split": "acceptance"
+  },
+  "obj-a_sheet05_rotated180.png": {
+    "template_id": "OBJ-A_rotated180_dejavu",
+    "layout_type": "rotated180",
+    "object_id": "OBJ-A",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Petra Gruber",
+      "planverfasser": "Architekturbuero Sued",
+      "bauvorhaben": "Anbau Garage",
+      "grundstuecksadresse": "Lindenweg 7",
+      "gemeinde": "Seehausen",
+      "flurstueck": "118/2",
+      "plannummer": "OBJ-A-05",
+      "datum": "04.02.2026",
+      "massstab": "1:50",
+      "index": "B"
+    },
+    "split": "acceptance"
+  },
+  "obj-a_sheet06_rotated270.png": {
+    "template_id": "OBJ-A_rotated270_serif",
+    "layout_type": "rotated270",
+    "object_id": "OBJ-A",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Petra Gruber",
+      "planverfasser": "Architekturbuero Sued",
+      "bauvorhaben": "Anbau Garage",
+      "grundstuecksadresse": "Lindenweg 7",
+      "gemeinde": "Seehausen",
+      "flurstueck": "118/2",
+      "plannummer": "OBJ-A-06",
+      "datum": "11.02.2026",
+      "massstab": "1:200",
+      "index": "C"
+    },
+    "split": "dev"
+  },
+  "obj-a_sheet07_no_frame.png": {
+    "template_id": "OBJ-A_no_frame_freesans",
+    "layout_type": "no_frame",
+    "object_id": "OBJ-A",
+    "error_type": "impossible_scale",
+    "notes": "Unmoeglicher Massstab 1:0 (absichtlich) - testet, ob das System Werte ungeprueft uebernimmt.",
+    "fields": {
+      "bauherr": "Petra Gruber",
+      "planverfasser": "Architekturbuero Sued",
+      "bauvorhaben": "Anbau Garage",
+      "grundstuecksadresse": "Lindenweg 7",
+      "gemeinde": "Seehausen",
+      "flurstueck": "118/2",
+      "plannummer": "OBJ-A-07",
+      "datum": "18.02.2026",
+      "massstab": "1:0",
+      "index": "A"
+    },
+    "split": "dev"
+  },
+  "obj-a_sheet08_bottom_right.png": {
+    "template_id": "OBJ-A_bottom_right_inter",
+    "layout_type": "bottom_right",
+    "object_id": "OBJ-A",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Petra Gruber",
+      "planverfasser": "Architekturbuero Sued",
+      "bauvorhaben": "Anbau Garage",
+      "grundstuecksadresse": "Lindenweg 7",
+      "gemeinde": "Seehausen",
+      "flurstueck": "118/2",
+      "plannummer": "OBJ-A-08",
+      "datum": "25.02.2026",
+      "massstab": "1:50",
+      "index": "B"
+    },
+    "split": "dev"
+  },
+  "obj-b_sheet01_right_strip.png": {
+    "template_id": "OBJ-B_right_strip_dejavu",
+    "layout_type": "right_strip",
+    "object_id": "OBJ-B",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Thomas Berger",
+      "planverfasser": "Buero Hoch Drei",
+      "bauvorhaben": "Neubau Doppelhaus",
+      "grundstuecksadresse": "Birkenallee 4",
+      "gemeinde": "Waldkirch",
+      "flurstueck": "340",
+      "plannummer": "OBJ-B-01",
+      "datum": "04.02.2026",
+      "massstab": "1:100",
+      "index": "A"
+    },
+    "split": "acceptance"
+  },
+  "obj-b_sheet02_top.png": {
+    "template_id": "OBJ-B_top_serif",
+    "layout_type": "top",
+    "object_id": "OBJ-B",
+    "error_type": "handwriting_value",
+    "notes": "Bauherr-Wert in handschriftlich wirkender Schrift (Caveat) gerendert.",
+    "fields": {
+      "bauherr": "Thomas Berger",
+      "planverfasser": "Buero Hoch Drei",
+      "bauvorhaben": "Neubau Doppelhaus",
+      "grundstuecksadresse": "Birkenallee 4"
+    },
+    "split": "dev"
+  },
+  "obj-b_sheet03_rotated90.png": {
+    "template_id": "OBJ-B_rotated90_freesans",
+    "layout_type": "rotated90",
+    "object_id": "OBJ-B",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Thomas Berger",
+      "planverfasser": "Buero Hoch Drei",
+      "bauvorhaben": "Neubau Doppelhaus",
+      "grundstuecksadresse": "Birkenallee 4",
+      "gemeinde": "Waldkirch",
+      "flurstueck": "340",
+      "plannummer": "OBJ-B-03",
+      "datum": "18.02.2026",
+      "massstab": "1:200",
+      "index": "C"
+    },
+    "split": "dev"
+  },
+  "obj-b_sheet04_rotated180.png": {
+    "template_id": "OBJ-B_rotated180_inter",
+    "layout_type": "rotated180",
+    "object_id": "OBJ-B",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Thomas Berger",
+      "planverfasser": "Buero Hoch Drei",
+      "bauvorhaben": "Neubau Doppelhaus",
+      "grundstuecksadresse": "Birkenallee 4",
+      "gemeinde": "Waldkirch",
+      "flurstueck": "340",
+      "plannummer": "OBJ-B-04",
+      "datum": "25.02.2026",
+      "massstab": "1:100",
+      "index": "A"
+    },
+    "split": "dev"
+  },
+  "obj-b_sheet05_rotated270.png": {
+    "template_id": "OBJ-B_rotated270_dejavu",
+    "layout_type": "rotated270",
+    "object_id": "OBJ-B",
+    "error_type": "decoy_text",
+    "notes": "Taeuschend aehnliches Datum ausserhalb des Titelblocks platziert.",
+    "fields": {
+      "bauherr": "Thomas Berger",
+      "planverfasser": "Buero Hoch Drei",
+      "bauvorhaben": "Neubau Doppelhaus",
+      "grundstuecksadresse": "Birkenallee 4",
+      "gemeinde": "Waldkirch",
+      "flurstueck": "340",
+      "plannummer": "OBJ-B-05",
+      "datum": "04.02.2026",
+      "massstab": "1:50",
+      "index": "B"
+    },
+    "split": "acceptance"
+  },
+  "obj-b_sheet06_no_frame.png": {
+    "template_id": "OBJ-B_no_frame_serif",
+    "layout_type": "no_frame",
+    "object_id": "OBJ-B",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Thomas Berger",
+      "planverfasser": "Buero Hoch Drei",
+      "bauvorhaben": "Neubau Doppelhaus",
+      "grundstuecksadresse": "Birkenallee 4",
+      "gemeinde": "Waldkirch",
+      "flurstueck": "340",
+      "plannummer": "OBJ-B-06",
+      "datum": "11.02.2026",
+      "massstab": "1:200",
+      "index": "C"
+    },
+    "split": "acceptance"
+  },
+  "obj-b_sheet07_bottom_right.png": {
+    "template_id": "OBJ-B_bottom_right_freesans",
+    "layout_type": "bottom_right",
+    "object_id": "OBJ-B",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Thomas Berger",
+      "planverfasser": "Buero Hoch Drei",
+      "bauvorhaben": "Neubau Doppelhaus",
+      "grundstuecksadresse": "Birkenallee 4",
+      "gemeinde": "Waldkirch",
+      "flurstueck": "340",
+      "plannummer": "OBJ-B-07",
+      "datum": "18.02.2026",
+      "massstab": "1:100",
+      "index": "A"
+    },
+    "split": "dev"
+  },
+  "obj-b_sheet08_right_strip.png": {
+    "template_id": "OBJ-B_right_strip_inter",
+    "layout_type": "right_strip",
+    "object_id": "OBJ-B",
+    "error_type": "alt_labels_and_font",
+    "notes": "Alternative Beschriftungen (z.B. 'Auftraggeber' statt 'Bauherr').",
+    "fields": {
+      "bauherr": "Thomas Berger",
+      "planverfasser": "Buero Hoch Drei",
+      "bauvorhaben": "Neubau Doppelhaus",
+      "grundstuecksadresse": "Birkenallee 4",
+      "gemeinde": "Waldkirch",
+      "flurstueck": "340",
+      "plannummer": "OBJ-B-08",
+      "datum": "25.02.2026",
+      "massstab": "1:50",
+      "index": "B"
+    },
+    "split": "dev"
+  },
+  "obj-c_sheet01_top.png": {
+    "template_id": "OBJ-C_top_dejavu",
+    "layout_type": "top",
+    "object_id": "OBJ-C",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Nina Keller",
+      "planverfasser": "Planwerk Keller und Partner",
+      "bauvorhaben": "Dachgeschossausbau",
+      "grundstuecksadresse": "Rosenstrasse 19"
+    },
+    "split": "dev"
+  },
+  "obj-c_sheet02_rotated90.png": {
+    "template_id": "OBJ-C_rotated90_serif",
+    "layout_type": "rotated90",
+    "object_id": "OBJ-C",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Nina Keller",
+      "planverfasser": "Planwerk Keller und Partner",
+      "bauvorhaben": "Dachgeschossausbau",
+      "grundstuecksadresse": "Rosenstrasse 19",
+      "gemeinde": "Bergstetten",
+      "flurstueck": "76/5",
+      "plannummer": "OBJ-C-02",
+      "datum": "11.02.2026",
+      "massstab": "1:50",
+      "index": "B"
+    },
+    "split": "acceptance"
+  },
+  "obj-c_sheet03_no_frame.png": {
+    "template_id": "OBJ-C_no_frame_freesans",
+    "layout_type": "no_frame",
+    "object_id": "OBJ-C",
+    "error_type": "no_frame_noisy",
+    "notes": "Kein Rahmen, zusaetzlich Stoertext auf der Seite.",
+    "fields": {
+      "bauherr": "Nina Keller",
+      "planverfasser": "Planwerk Keller und Partner",
+      "bauvorhaben": "Dachgeschossausbau",
+      "grundstuecksadresse": "Rosenstrasse 19",
+      "gemeinde": "Bergstetten",
+      "flurstueck": "76/5",
+      "plannummer": "OBJ-C-03",
+      "datum": "18.02.2026",
+      "massstab": "1:200",
+      "index": "C"
+    },
+    "split": "dev"
+  },
+  "obj-c_sheet04_rotated270.png": {
+    "template_id": "OBJ-C_rotated270_inter",
+    "layout_type": "rotated270",
+    "object_id": "OBJ-C",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Nina Keller",
+      "planverfasser": "Planwerk Keller und Partner",
+      "bauvorhaben": "Dachgeschossausbau",
+      "grundstuecksadresse": "Rosenstrasse 19",
+      "gemeinde": "Bergstetten",
+      "flurstueck": "76/5",
+      "plannummer": "OBJ-C-04",
+      "datum": "25.02.2026",
+      "massstab": "1:100",
+      "index": "A"
+    },
+    "split": "dev"
+  },
+  "obj-c_sheet05_no_frame.png": {
+    "template_id": "OBJ-C_no_frame_dejavu",
+    "layout_type": "no_frame",
+    "object_id": "OBJ-C",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Nina Keller",
+      "planverfasser": "Planwerk Keller und Partner",
+      "bauvorhaben": "Dachgeschossausbau",
+      "grundstuecksadresse": "Rosenstrasse 19",
+      "gemeinde": "Bergstetten",
+      "flurstueck": "76/5",
+      "plannummer": "OBJ-C-05",
+      "datum": "04.02.2026",
+      "massstab": "1:50",
+      "index": "B"
+    },
+    "split": "dev"
+  },
+  "obj-c_sheet06_bottom_right.png": {
+    "template_id": "OBJ-C_bottom_right_serif",
+    "layout_type": "bottom_right",
+    "object_id": "OBJ-C",
+    "error_type": "degraded_scan",
+    "notes": "Simulierte Scan-Qualitaet: Schiefstand + Weichzeichnung.",
+    "fields": {
+      "bauherr": "Nina Keller",
+      "planverfasser": "Planwerk Keller und Partner",
+      "bauvorhaben": "Dachgeschossausbau",
+      "grundstuecksadresse": "Rosenstrasse 19",
+      "gemeinde": "Bergstetten",
+      "flurstueck": "76/5",
+      "plannummer": "OBJ-C-06",
+      "datum": "11.02.2026",
+      "massstab": "1:200",
+      "index": "C"
+    },
+    "split": "acceptance"
+  },
+  "obj-c_sheet07_right_strip.png": {
+    "template_id": "OBJ-C_right_strip_freesans",
+    "layout_type": "right_strip",
+    "object_id": "OBJ-C",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Nina Keller",
+      "planverfasser": "Planwerk Keller und Partner",
+      "bauvorhaben": "Dachgeschossausbau",
+      "grundstuecksadresse": "Rosenstrasse 19",
+      "gemeinde": "Bergstetten",
+      "flurstueck": "76/5",
+      "plannummer": "OBJ-C-07",
+      "datum": "18.02.2026",
+      "massstab": "1:100",
+      "index": "A"
+    },
+    "split": "acceptance"
+  },
+  "obj-d_sheet01_top.png": {
+    "template_id": "OBJ-D_top_inter",
+    "layout_type": "top",
+    "object_id": "OBJ-D",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Stefan Wolf",
+      "planverfasser": "Architekturbuero Nord",
+      "bauvorhaben": "Neubau Einfamilienhaus",
+      "grundstuecksadresse": "Musterweg 12"
+    },
+    "split": "dev"
+  },
+  "obj-d_sheet02_rotated90.png": {
+    "template_id": "OBJ-D_rotated90_dejavu",
+    "layout_type": "rotated90",
+    "object_id": "OBJ-D",
+    "error_type": "inconsistent_flurstueck",
+    "notes": "Flurstueck weicht von den anderen Blaettern desselben Objekts ab (absichtlich).",
+    "fields": {
+      "bauherr": "Stefan Wolf",
+      "planverfasser": "Architekturbuero Nord",
+      "bauvorhaben": "Neubau Einfamilienhaus",
+      "grundstuecksadresse": "Musterweg 12",
+      "gemeinde": "Musterstadt",
+      "flurstueck": "245/3X",
+      "plannummer": "OBJ-D-02",
+      "datum": "11.02.2026",
+      "massstab": "1:50",
+      "index": "B"
+    },
+    "split": "dev"
+  },
+  "obj-d_sheet03_rotated180.png": {
+    "template_id": "OBJ-D_rotated180_serif",
+    "layout_type": "rotated180",
+    "object_id": "OBJ-D",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Stefan Wolf",
+      "planverfasser": "Architekturbuero Nord",
+      "bauvorhaben": "Neubau Einfamilienhaus",
+      "grundstuecksadresse": "Musterweg 12",
+      "gemeinde": "Musterstadt",
+      "flurstueck": "245/3",
+      "plannummer": "OBJ-D-03",
+      "datum": "18.02.2026",
+      "massstab": "1:200",
+      "index": "C"
+    },
+    "split": "dev"
+  },
+  "obj-d_sheet04_rotated270.png": {
+    "template_id": "OBJ-D_rotated270_freesans",
+    "layout_type": "rotated270",
+    "object_id": "OBJ-D",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Stefan Wolf",
+      "planverfasser": "Architekturbuero Nord",
+      "bauvorhaben": "Neubau Einfamilienhaus",
+      "grundstuecksadresse": "Musterweg 12",
+      "gemeinde": "Musterstadt",
+      "flurstueck": "245/3",
+      "plannummer": "OBJ-D-04",
+      "datum": "25.02.2026",
+      "massstab": "1:100",
+      "index": "A"
+    },
+    "split": "acceptance"
+  },
+  "obj-d_sheet05_no_frame.png": {
+    "template_id": "OBJ-D_no_frame_inter",
+    "layout_type": "no_frame",
+    "object_id": "OBJ-D",
+    "error_type": "missing_date",
+    "notes": "Plandatum fehlt auf dem Blatt (absichtlich).",
+    "fields": {
+      "bauherr": "Stefan Wolf",
+      "planverfasser": "Architekturbuero Nord",
+      "bauvorhaben": "Neubau Einfamilienhaus",
+      "grundstuecksadresse": "Musterweg 12",
+      "gemeinde": "Musterstadt",
+      "flurstueck": "245/3",
+      "plannummer": "OBJ-D-05",
+      "massstab": "1:50",
+      "index": "B"
+    },
+    "split": "dev"
+  },
+  "obj-d_sheet06_bottom_right.png": {
+    "template_id": "OBJ-D_bottom_right_dejavu",
+    "layout_type": "bottom_right",
+    "object_id": "OBJ-D",
+    "error_type": "decoy_text",
+    "notes": "Taeuschend aehnliches Datum ausserhalb des Titelblocks platziert.",
+    "fields": {
+      "bauherr": "Stefan Wolf",
+      "planverfasser": "Architekturbuero Nord",
+      "bauvorhaben": "Neubau Einfamilienhaus",
+      "grundstuecksadresse": "Musterweg 12",
+      "gemeinde": "Musterstadt",
+      "flurstueck": "245/3",
+      "plannummer": "OBJ-D-06",
+      "datum": "11.02.2026",
+      "massstab": "1:200",
+      "index": "C"
+    },
+    "split": "acceptance"
+  },
+  "obj-d_sheet07_right_strip.png": {
+    "template_id": "OBJ-D_right_strip_serif",
+    "layout_type": "right_strip",
+    "object_id": "OBJ-D",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Stefan Wolf",
+      "planverfasser": "Architekturbuero Nord",
+      "bauvorhaben": "Neubau Einfamilienhaus",
+      "grundstuecksadresse": "Musterweg 12",
+      "gemeinde": "Musterstadt",
+      "flurstueck": "245/3",
+      "plannummer": "OBJ-D-07",
+      "datum": "18.02.2026",
+      "massstab": "1:100",
+      "index": "A"
+    },
+    "split": "dev"
+  },
+  "duplicate_of_obj-a_sheet02_right_strip.png": {
+    "template_id": "OBJ-A_right_strip_serif",
+    "layout_type": "right_strip",
+    "object_id": "OBJ-A",
+    "error_type": "duplicate_plan",
+    "notes": "Exakte Kopie von obj-a_sheet02_right_strip.png (absichtlich).",
+    "fields": {
+      "bauherr": "Petra Gruber",
+      "planverfasser": "Architekturbuero Sued",
+      "bauvorhaben": "Anbau Garage",
+      "grundstuecksadresse": "Lindenweg 7",
+      "gemeinde": "Seehausen",
+      "flurstueck": "118/2",
+      "plannummer": "OBJ-A-02",
+      "datum": "11.02.2026",
+      "massstab": "1:50",
+      "index": "B"
+    },
+    "split": "dev"
+  }
+}

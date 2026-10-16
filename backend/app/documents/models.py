@@ -275,3 +275,30 @@ class BenchmarkRun(Base):
     per_field_json = Column(Text, nullable=False)
     per_template_json = Column(Text, nullable=False)
     plan_count = Column(Integer, nullable=False)
+
+
+class FullBenchmarkRun(Base):
+    """P28 - erweiterter Pruefstand (Abnahme-Messung) mit getrennter
+    Entwicklungs-/Abnahme-Gruppe. Eigene Tabelle, damit die bestehende
+    BenchmarkRun-Tabelle (P13-Basis-Pruefstand) nicht veraendert werden
+    muss - vermeidet jedes Migrationsrisiko fuer bestehende Installationen."""
+
+    __tablename__ = "doc_full_benchmark_runs"
+
+    id = Column(Integer, primary_key=True)
+    run_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    plan_count = Column(Integer, nullable=False)
+    dev_count = Column(Integer, nullable=False)
+    acceptance_count = Column(Integer, nullable=False)
+
+    dev_hit_rate = Column(Float, nullable=False)
+    dev_false_green_rate = Column(Float, nullable=False)
+    dev_no_result_rate = Column(Float, nullable=False)
+
+    acceptance_hit_rate = Column(Float, nullable=False)
+    acceptance_false_green_rate = Column(Float, nullable=False)
+    acceptance_no_result_rate = Column(Float, nullable=False)
+
+    report_json_path = Column(String, nullable=False)
+    report_markdown_path = Column(String, nullable=False)
+    summary_json = Column(Text, nullable=False)  # Rest der Details (siehe Runner)

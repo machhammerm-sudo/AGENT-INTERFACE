@@ -1,0 +1,5922 @@
+{
+  "run_at": "2026-10-16T00:16:36.724004",
+  "plan_count": 31,
+  "dev_count": 21,
+  "acceptance_count": 10,
+  "error_plan_count": 12,
+  "processing_errors": [],
+  "overall": {
+    "dev": {
+      "hit_rate": 0.5317,
+      "false_green_rate": 0.0238,
+      "no_result_rate": 0.4603,
+      "n": 252,
+      "n_green": 42
+    },
+    "acceptance": {
+      "hit_rate": 0.4333,
+      "false_green_rate": 0.2,
+      "no_result_rate": 0.4667,
+      "n": 120,
+      "n_green": 20
+    }
+  },
+  "per_field": {
+    "dev": {
+      "flurstueck": {
+        "hit_rate": 0.5238,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.1905,
+        "n": 21,
+        "n_green": 4
+      },
+      "massstab": {
+        "hit_rate": 0.4762,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.381,
+        "n": 21,
+        "n_green": 4
+      },
+      "datum": {
+        "hit_rate": 0.7143,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.3333,
+        "n": 21,
+        "n_green": 3
+      },
+      "gemeinde": {
+        "hit_rate": 0.4286,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.5238,
+        "n": 21,
+        "n_green": 5
+      },
+      "flaeche": {
+        "hit_rate": 1.0,
+        "false_green_rate": 0.0,
+        "no_result_rate": 1.0,
+        "n": 21,
+        "n_green": 0
+      },
+      "plannummer": {
+        "hit_rate": 0.1905,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.0,
+        "n": 21,
+        "n_green": 4
+      },
+      "bauvorhaben": {
+        "hit_rate": 0.381,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.5714,
+        "n": 21,
+        "n_green": 5
+      },
+      "index": {
+        "hit_rate": 0.4762,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.2381,
+        "n": 21,
+        "n_green": 4
+      },
+      "planverfasser": {
+        "hit_rate": 0.381,
+        "false_green_rate": 0.25,
+        "no_result_rate": 0.3333,
+        "n": 21,
+        "n_green": 4
+      },
+      "planinhalt": {
+        "hit_rate": 1.0,
+        "false_green_rate": 0.0,
+        "no_result_rate": 1.0,
+        "n": 21,
+        "n_green": 0
+      },
+      "bauherr": {
+        "hit_rate": 0.381,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.4762,
+        "n": 21,
+        "n_green": 4
+      },
+      "grundstuecksadresse": {
+        "hit_rate": 0.4286,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.4762,
+        "n": 21,
+        "n_green": 5
+      }
+    },
+    "acceptance": {
+      "flurstueck": {
+        "hit_rate": 0.3,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.3,
+        "n": 10,
+        "n_green": 2
+      },
+      "massstab": {
+        "hit_rate": 0.3,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.4,
+        "n": 10,
+        "n_green": 2
+      },
+      "datum": {
+        "hit_rate": 0.5,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.5,
+        "n": 10,
+        "n_green": 2
+      },
+      "gemeinde": {
+        "hit_rate": 0.2,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.5,
+        "n": 10,
+        "n_green": 2
+      },
+      "flaeche": {
+        "hit_rate": 1.0,
+        "false_green_rate": 0.0,
+        "no_result_rate": 1.0,
+        "n": 10,
+        "n_green": 0
+      },
+      "plannummer": {
+        "hit_rate": 0.3,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.1,
+        "n": 10,
+        "n_green": 3
+      },
+      "bauvorhaben": {
+        "hit_rate": 0.3,
+        "false_green_rate": 0.5,
+        "no_result_rate": 0.5,
+        "n": 10,
+        "n_green": 2
+      },
+      "index": {
+        "hit_rate": 0.3,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.1,
+        "n": 10,
+        "n_green": 1
+      },
+      "planverfasser": {
+        "hit_rate": 0.2,
+        "false_green_rate": 0.5,
+        "no_result_rate": 0.4,
+        "n": 10,
+        "n_green": 2
+      },
+      "planinhalt": {
+        "hit_rate": 1.0,
+        "false_green_rate": 0.0,
+        "no_result_rate": 1.0,
+        "n": 10,
+        "n_green": 0
+      },
+      "bauherr": {
+        "hit_rate": 0.4,
+        "false_green_rate": 0.5,
+        "no_result_rate": 0.4,
+        "n": 10,
+        "n_green": 2
+      },
+      "grundstuecksadresse": {
+        "hit_rate": 0.4,
+        "false_green_rate": 0.5,
+        "no_result_rate": 0.4,
+        "n": 10,
+        "n_green": 2
+      }
+    }
+  },
+  "per_layout_type": {
+    "dev": {
+      "right_strip": {
+        "hit_rate": 0.875,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.2292,
+        "n": 48,
+        "n_green": 31
+      },
+      "bottom_right": {
+        "hit_rate": 0.3611,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.5,
+        "n": 36,
+        "n_green": 0
+      },
+      "top": {
+        "hit_rate": 0.625,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.875,
+        "n": 48,
+        "n_green": 1
+      },
+      "rotated270": {
+        "hit_rate": 0.4167,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.25,
+        "n": 24,
+        "n_green": 0
+      },
+      "no_frame": {
+        "hit_rate": 0.4792,
+        "false_green_rate": 0.1,
+        "no_result_rate": 0.3958,
+        "n": 48,
+        "n_green": 10
+      },
+      "rotated90": {
+        "hit_rate": 0.375,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.375,
+        "n": 24,
+        "n_green": 0
+      },
+      "rotated180": {
+        "hit_rate": 0.2917,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.4583,
+        "n": 24,
+        "n_green": 0
+      }
+    },
+    "acceptance": {
+      "rotated90": {
+        "hit_rate": 0.5833,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.25,
+        "n": 24,
+        "n_green": 0
+      },
+      "rotated180": {
+        "hit_rate": 0.1667,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.75,
+        "n": 12,
+        "n_green": 0
+      },
+      "right_strip": {
+        "hit_rate": 0.5417,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.5,
+        "n": 24,
+        "n_green": 9
+      },
+      "rotated270": {
+        "hit_rate": 0.2917,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.5417,
+        "n": 24,
+        "n_green": 0
+      },
+      "no_frame": {
+        "hit_rate": 0.6667,
+        "false_green_rate": 0.4,
+        "no_result_rate": 0.1667,
+        "n": 12,
+        "n_green": 10
+      },
+      "bottom_right": {
+        "hit_rate": 0.3333,
+        "false_green_rate": 0.0,
+        "no_result_rate": 0.5833,
+        "n": 24,
+        "n_green": 1
+      }
+    }
+  },
+  "false_green_cases": [
+    {
+      "filename": "obj-a_sheet07_no_frame.png",
+      "field_key": "planverfasser",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "impossible_scale",
+      "status": "green",
+      "expected": "Architekturbuero Sued",
+      "extracted": "Anbau A Petra Lindenweg Seehausen OBJ-A-07 11872 10 18.02.2026 Gruber Garage 7 Sued",
+      "candidates": [
+        {
+          "value": "Anbau A Petra Lindenweg Seehausen OBJ-A-07 11872 10 18.02.2026 Gruber Garage 7 Sued",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 86.6,
+          "match_type": "same_line",
+          "label_score": 72.0,
+          "rel_bbox": [
+            0.5166666666666667,
+            0.18361153262518967,
+            0.2733333333333333,
+            0.5386949924127465
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereich oder Zelle falsch abgegrenzt"
+    },
+    {
+      "filename": "obj-b_sheet06_no_frame.png",
+      "field_key": "bauvorhaben",
+      "split": "acceptance",
+      "layout_type": "no_frame",
+      "error_type": null,
+      "status": "green",
+      "expected": "Neubau Doppelhaus",
+      "extracted": "Neubau Di",
+      "candidates": [
+        {
+          "value": "Neubau Di",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 91.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.7775,
+            0.30197268588770865,
+            0.2225,
+            0.019726858877086494
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereich oder Zelle falsch abgegrenzt"
+    },
+    {
+      "filename": "obj-b_sheet06_no_frame.png",
+      "field_key": "planverfasser",
+      "split": "acceptance",
+      "layout_type": "no_frame",
+      "error_type": null,
+      "status": "green",
+      "expected": "Buero Hoch Drei",
+      "extracted": "Buero Hoc",
+      "candidates": [
+        {
+          "value": "Buero Hoc",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 90.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.7775,
+            0.24582701062215478,
+            0.2225,
+            0.018209408194233688
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereich oder Zelle falsch abgegrenzt"
+    },
+    {
+      "filename": "obj-b_sheet06_no_frame.png",
+      "field_key": "bauherr",
+      "split": "acceptance",
+      "layout_type": "no_frame",
+      "error_type": null,
+      "status": "green",
+      "expected": "Thomas Berger",
+      "extracted": "Thomas Be",
+      "candidates": [
+        {
+          "value": "Thomas Be",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 95.5,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.775,
+            0.18664643399089528,
+            0.225,
+            0.019726858877086494
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereich oder Zelle falsch abgegrenzt"
+    },
+    {
+      "filename": "obj-b_sheet06_no_frame.png",
+      "field_key": "grundstuecksadresse",
+      "split": "acceptance",
+      "layout_type": "no_frame",
+      "error_type": null,
+      "status": "green",
+      "expected": "Birkenallee 4",
+      "extracted": "Birkenalle",
+      "candidates": [
+        {
+          "value": "Birkenalle",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 84.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.7775,
+            0.3596358118361153,
+            0.2225,
+            0.019726858877086494
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereich oder Zelle falsch abgegrenzt"
+    }
+  ],
+  "other_wrong_cases": [
+    {
+      "filename": "obj-a_sheet01_bottom_right.png",
+      "field_key": "flurstueck",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": "inconsistent_flurstueck",
+      "status": "yellow",
+      "expected": "118/2X",
+      "extracted": "9207",
+      "candidates": [
+        {
+          "value": "9207",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 23.9,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.08208955223880597,
+            0.1606060606060606,
+            0.917910447761194,
+            0.3606060606060606
+          ]
+        },
+        {
+          "value": "8",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 30.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.0,
+            0.8939393939393939,
+            0.7910447761194029,
+            0.03939393939393939
+          ]
+        }
+      ],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet01_bottom_right.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": "inconsistent_flurstueck",
+      "status": "yellow",
+      "expected": "OBJ-A-01",
+      "extracted": "To-v-ao",
+      "candidates": [
+        {
+          "value": "To-v-ao",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 29.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.26119402985074625,
+            0.06060606060606061,
+            0.7388059701492538,
+            0.06363636363636363
+          ]
+        },
+        {
+          "value": "9207",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 23.9,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.08208955223880597,
+            0.1606060606060606,
+            0.917910447761194,
+            0.3606060606060606
+          ]
+        },
+        {
+          "value": "Bamuapun",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 31.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.007462686567164179,
+            0.5727272727272728,
+            0.7835820895522388,
+            0.051515151515151514
+          ]
+        }
+      ],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet01_bottom_right.png",
+      "field_key": "index",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": "inconsistent_flurstueck",
+      "status": "yellow",
+      "expected": "A",
+      "extracted": "To",
+      "candidates": [
+        {
+          "value": "To",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 29.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.26119402985074625,
+            0.06060606060606061,
+            0.7388059701492538,
+            0.06363636363636363
+          ]
+        },
+        {
+          "value": "T",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 23.9,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.08208955223880597,
+            0.1606060606060606,
+            0.917910447761194,
+            0.3606060606060606
+          ]
+        },
+        {
+          "value": "ı",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 31.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.007462686567164179,
+            0.5727272727272728,
+            0.7835820895522388,
+            0.051515151515151514
+          ]
+        }
+      ],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet03_top.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": null,
+      "status": "yellow",
+      "expected": null,
+      "extracted": "eben",
+      "candidates": [
+        {
+          "value": "eben",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 66.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.4689507494646681,
+            0.6183745583038869,
+            0.2291220556745182,
+            0.06007067137809187
+          ]
+        },
+        {
+          "value": "uaqeyioaneg",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 35.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.49036402569593146,
+            0.8515901060070671,
+            0.20556745182012848,
+            0.045936395759717315
+          ]
+        }
+      ],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet04_rotated90.png",
+      "field_key": "flurstueck",
+      "split": "acceptance",
+      "layout_type": "rotated90",
+      "error_type": "missing_date",
+      "status": "yellow",
+      "expected": "118/2",
+      "extracted": "7",
+      "candidates": [
+        {
+          "value": "7",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 94.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.5144508670520231,
+            0.15142428785607195,
+            0.03275529865125241
+          ]
+        },
+        {
+          "value": "118/2",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 87.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.5799614643545279,
+            0.13043478260869565,
+            0.09441233140655106
+          ]
+        },
+        {
+          "value": "1",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 79.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.7109826589595376,
+            0.05847076461769116,
+            0.025048169556840076
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-a_sheet04_rotated90.png",
+      "field_key": "massstab",
+      "split": "acceptance",
+      "layout_type": "rotated90",
+      "error_type": "missing_date",
+      "status": "yellow",
+      "expected": "1:100",
+      "extracted": "Datum",
+      "candidates": [
+        {
+          "value": "Datum",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27436281859070466,
+            0.7090558766859345,
+            0.07496251874062969,
+            0.1001926782273603
+          ]
+        },
+        {
+          "value": "1:100",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 79.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.7109826589595376,
+            0.05847076461769116,
+            0.025048169556840076
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-a_sheet04_rotated90.png",
+      "field_key": "gemeinde",
+      "split": "acceptance",
+      "layout_type": "rotated90",
+      "error_type": "missing_date",
+      "status": "yellow",
+      "expected": "Seehausen",
+      "extracted": "Flurstueck",
+      "candidates": [
+        {
+          "value": "Flurstueck",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 92.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27436281859070466,
+            0.5780346820809249,
+            0.12443778110944528,
+            0.1001926782273603
+          ]
+        },
+        {
+          "value": "Seehausen 118/2",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 87.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.5799614643545279,
+            0.13043478260869565,
+            0.09441233140655106
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-a_sheet04_rotated90.png",
+      "field_key": "plannummer",
+      "split": "acceptance",
+      "layout_type": "rotated90",
+      "error_type": "missing_date",
+      "status": "yellow",
+      "expected": "OBJ-A-04",
+      "extracted": "Index",
+      "candidates": [
+        {
+          "value": "Index",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27436281859070466,
+            0.838150289017341,
+            0.06296851574212893,
+            0.10211946050096339
+          ]
+        },
+        {
+          "value": "OBJ-A-04 A",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 92.5,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.8420038535645472,
+            0.1199400299850075,
+            0.0905587668593449
+          ]
+        },
+        {
+          "value": "Petra",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 96.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.3179190751445087,
+            0.15292353823088456,
+            0.025048169556840076
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-a_sheet04_rotated90.png",
+      "field_key": "planverfasser",
+      "split": "acceptance",
+      "layout_type": "rotated90",
+      "error_type": "missing_date",
+      "status": "yellow",
+      "expected": "Architekturbuero Sued",
+      "extracted": "Sued",
+      "candidates": [
+        {
+          "value": "Sued",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 93.0,
+          "match_type": "same_line",
+          "label_score": 72.0,
+          "rel_bbox": [
+            0.7511244377811095,
+            0.3834296724470135,
+            0.05847076461769116,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "Architekturbuero Sued",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 92.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.3834296724470135,
+            0.2683658170914543,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "Gemeinde Flurstueck",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.0,
+          "match_type": "below",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27436281859070466,
+            0.5780346820809249,
+            0.12443778110944528,
+            0.1001926782273603
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Mehrdeutigkeit zwischen sehr aehnlich bewerteten Kandidaten"
+    },
+    {
+      "filename": "obj-a_sheet05_rotated180.png",
+      "field_key": "flurstueck",
+      "split": "acceptance",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "118/2",
+      "extracted": "1",
+      "candidates": [
+        {
+          "value": "1",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 70.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.28693790149892934,
+            0.6259946949602122,
+            0.22483940042826553,
+            0.04509283819628647
+          ]
+        }
+      ],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet05_rotated180.png",
+      "field_key": "plannummer",
+      "split": "acceptance",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "OBJ-A-05",
+      "extracted": "xepul",
+      "candidates": [
+        {
+          "value": "xepul",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 54.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7987152034261242,
+            0.08488063660477453,
+            0.09421841541755889,
+            0.034482758620689655
+          ]
+        },
+        {
+          "value": "Jawunuueld",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 16.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.6659528907922913,
+            0.17506631299734748,
+            0.22698072805139186,
+            0.034482758620689655
+          ]
+        },
+        {
+          "value": "s0-v",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 12.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.35974304068522484,
+            0.17771883289124668,
+            0.15417558886509636,
+            0.03978779840848806
+          ]
+        }
+      ],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet05_rotated180.png",
+      "field_key": "index",
+      "split": "acceptance",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "B",
+      "extracted": "a",
+      "candidates": [
+        {
+          "value": "a",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 83.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.49464668094218417,
+            0.09549071618037135,
+            0.017130620985010708,
+            0.03183023872679045
+          ]
+        },
+        {
+          "value": "s0",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 12.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.35974304068522484,
+            0.17771883289124668,
+            0.15417558886509636,
+            0.03978779840848806
+          ]
+        },
+        {
+          "value": "Z0",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 12.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.3083511777301927,
+            0.27586206896551724,
+            0.20556745182012848,
+            0.03183023872679045
+          ]
+        }
+      ],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet06_rotated270.png",
+      "field_key": "flurstueck",
+      "split": "dev",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "118/2",
+      "extracted": "7",
+      "candidates": [
+        {
+          "value": "7",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 94.1,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5397301349325337,
+            0.3159922928709056,
+            0.22338830584707647,
+            0.22928709055876687
+          ]
+        },
+        {
+          "value": "118/2",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 89.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.5780346820809249,
+            0.13943028485757122,
+            0.09441233140655106
+          ]
+        },
+        {
+          "value": "06",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 84.8,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.7109826589595376,
+            0.14392803598200898,
+            0.21965317919075145
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-a_sheet06_rotated270.png",
+      "field_key": "massstab",
+      "split": "dev",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "1:200",
+      "extracted": "Datum Plannummer Index",
+      "candidates": [
+        {
+          "value": "Datum Plannummer Index",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.3,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27436281859070466,
+            0.7013487475915221,
+            0.0704647676161919,
+            0.23699421965317918
+          ]
+        },
+        {
+          "value": "OBJ-A-06 c 1:200 11.02.2026",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 84.8,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.7109826589595376,
+            0.14392803598200898,
+            0.21965317919075145
+          ]
+        },
+        {
+          "value": "1:200",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 84.8,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.7109826589595376,
+            0.14392803598200898,
+            0.21965317919075145
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-a_sheet06_rotated270.png",
+      "field_key": "gemeinde",
+      "split": "dev",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "Seehausen",
+      "extracted": "Flurstueck",
+      "candidates": [
+        {
+          "value": "Flurstueck",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 92.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27436281859070466,
+            0.5780346820809249,
+            0.136431784107946,
+            0.09826589595375723
+          ]
+        },
+        {
+          "value": "Seehausen 118/2",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 89.5,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.5780346820809249,
+            0.13943028485757122,
+            0.09441233140655106
+          ]
+        },
+        {
+          "value": "Massstab Datum Plannummer Index",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 93.8,
+          "match_type": "below",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.2683658170914543,
+            0.7013487475915221,
+            0.16941529235382308,
+            0.23699421965317918
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-a_sheet06_rotated270.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "OBJ-A-06",
+      "extracted": "Adresse",
+      "candidates": [
+        {
+          "value": "Adresse",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 91.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.272863568215892,
+            0.3159922928709056,
+            0.17691154422788605,
+            0.22928709055876687
+          ]
+        },
+        {
+          "value": "Architekturbuero",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 94.1,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5397301349325337,
+            0.3159922928709056,
+            0.22338830584707647,
+            0.22928709055876687
+          ]
+        },
+        {
+          "value": "Sued",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 96.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7736131934032984,
+            0.3815028901734104,
+            0.06296851574212893,
+            0.025048169556840076
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-a_sheet06_rotated270.png",
+      "field_key": "index",
+      "split": "dev",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "C",
+      "extracted": "A",
+      "candidates": [
+        {
+          "value": "A",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 84.8,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.7109826589595376,
+            0.14392803598200898,
+            0.21965317919075145
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-a_sheet06_rotated270.png",
+      "field_key": "planverfasser",
+      "split": "dev",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "Architekturbuero Sued",
+      "extracted": "Anbau Petra Lindenweg Gruber Garage 7",
+      "candidates": [
+        {
+          "value": "Anbau Petra Lindenweg Gruber Garage 7",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.8,
+          "match_type": "same_line",
+          "label_score": 72.0,
+          "rel_bbox": [
+            0.5397301349325337,
+            0.3159922928709056,
+            0.1664167916041979,
+            0.22928709055876687
+          ]
+        },
+        {
+          "value": "Sued",
+          "assignment_confidence": 0.96,
+          "ocr_confidence": 96.0,
+          "match_type": "right_of_label_row",
+          "label_score": 72.0,
+          "rel_bbox": [
+            0.7736131934032984,
+            0.3815028901734104,
+            0.06296851574212893,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "Seehausen 118/2",
+          "assignment_confidence": 0.86,
+          "ocr_confidence": 89.5,
+          "match_type": "below",
+          "label_score": 72.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.5780346820809249,
+            0.13943028485757122,
+            0.09441233140655106
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Mehrdeutigkeit zwischen sehr aehnlich bewerteten Kandidaten"
+    },
+    {
+      "filename": "obj-a_sheet06_rotated270.png",
+      "field_key": "grundstuecksadresse",
+      "split": "dev",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "Lindenweg 7",
+      "extracted": "Bauherr Planverfasser Bauvorhaben",
+      "candidates": [
+        {
+          "value": "Bauherr Planverfasser Bauvorhaben",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 93.3,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27436281859070466,
+            0.3159922928709056,
+            0.17091454272863568,
+            0.22928709055876687
+          ]
+        },
+        {
+          "value": "Architekturbuero Anbau Petra Lindenweg Gruber Garage 7",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.1,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5397301349325337,
+            0.3159922928709056,
+            0.22338830584707647,
+            0.22928709055876687
+          ]
+        },
+        {
+          "value": "Sued",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.7736131934032984,
+            0.3815028901734104,
+            0.06296851574212893,
+            0.025048169556840076
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-a_sheet07_no_frame.png",
+      "field_key": "flurstueck",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "impossible_scale",
+      "status": "yellow",
+      "expected": "118/2",
+      "extracted": "07",
+      "candidates": [
+        {
+          "value": "07",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 86.7,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5166666666666667,
+            0.18361153262518967,
+            0.2733333333333333,
+            0.5386949924127465
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-a_sheet07_no_frame.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "impossible_scale",
+      "status": "yellow",
+      "expected": "OBJ-A-07",
+      "extracted": "Bauherr",
+      "candidates": [
+        {
+          "value": "Bauherr",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 86.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.195,
+            0.17754172989377845,
+            0.17166666666666666,
+            0.5584218512898331
+          ]
+        },
+        {
+          "value": "Architekturbuero",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 86.7,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5166666666666667,
+            0.18361153262518967,
+            0.2733333333333333,
+            0.5386949924127465
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-a_sheet07_no_frame.png",
+      "field_key": "bauherr",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "impossible_scale",
+      "status": "yellow",
+      "expected": "Petra Gruber",
+      "extracted": "Bauvorhaben Adresse: Planverfasser Gemeinde: Flurstueck Massstab Datum; Plannummer: Index:",
+      "candidates": [
+        {
+          "value": "Bauvorhaben Adresse: Planverfasser Gemeinde: Flurstueck Massstab Datum; Plannummer: Index:",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 85.8,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.195,
+            0.17754172989377845,
+            0.07166666666666667,
+            0.5584218512898331
+          ]
+        },
+        {
+          "value": "Architekturbuero Anbau A Petra Lindenweg Seehausen OBJ-A-07 11872 10 18.02.2026 Gruber Garage 7 Sued",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 86.7,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5166666666666667,
+            0.18361153262518967,
+            0.2733333333333333,
+            0.5386949924127465
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-a_sheet08_bottom_right.png",
+      "field_key": "flurstueck",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "118/2",
+      "extracted": "7",
+      "candidates": [
+        {
+          "value": "7",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 94.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.5144508670520231,
+            0.15142428785607195,
+            0.03275529865125241
+          ]
+        },
+        {
+          "value": "118/2",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 87.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.5799614643545279,
+            0.13043478260869565,
+            0.09441233140655106
+          ]
+        },
+        {
+          "value": "1",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 95.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.7109826589595376,
+            0.13493253373313344,
+            0.0905587668593449
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-a_sheet08_bottom_right.png",
+      "field_key": "massstab",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "1:50",
+      "extracted": "Datum",
+      "candidates": [
+        {
+          "value": "Datum",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27436281859070466,
+            0.7109826589595376,
+            0.07496251874062969,
+            0.09826589595375723
+          ]
+        },
+        {
+          "value": "1:50 25.02.2026",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 95.5,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.7109826589595376,
+            0.13493253373313344,
+            0.0905587668593449
+          ]
+        },
+        {
+          "value": "1:50",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 95.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.7109826589595376,
+            0.13493253373313344,
+            0.0905587668593449
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-a_sheet08_bottom_right.png",
+      "field_key": "gemeinde",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "Seehausen",
+      "extracted": "Flurstueck",
+      "candidates": [
+        {
+          "value": "Flurstueck",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 92.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27436281859070466,
+            0.5780346820809249,
+            0.12443778110944528,
+            0.1001926782273603
+          ]
+        },
+        {
+          "value": "Seehausen 118/2",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 87.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.5799614643545279,
+            0.13043478260869565,
+            0.09441233140655106
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-a_sheet08_bottom_right.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "OBJ-A-08",
+      "extracted": "Index",
+      "candidates": [
+        {
+          "value": "Index",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27436281859070466,
+            0.8362235067437379,
+            0.06296851574212893,
+            0.10404624277456648
+          ]
+        },
+        {
+          "value": "OBJ-A-08 B",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 92.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.8420038535645472,
+            0.1184407796101949,
+            0.0905587668593449
+          ]
+        },
+        {
+          "value": "Petra",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 96.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.3179190751445087,
+            0.15292353823088456,
+            0.025048169556840076
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-a_sheet08_bottom_right.png",
+      "field_key": "index",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "B",
+      "extracted": "A",
+      "candidates": [
+        {
+          "value": "A",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 92.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.8420038535645472,
+            0.1184407796101949,
+            0.0905587668593449
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-a_sheet08_bottom_right.png",
+      "field_key": "planverfasser",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "Architekturbuero Sued",
+      "extracted": "Sued",
+      "candidates": [
+        {
+          "value": "Sued",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 93.0,
+          "match_type": "same_line",
+          "label_score": 72.0,
+          "rel_bbox": [
+            0.7511244377811095,
+            0.3834296724470135,
+            0.05847076461769116,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "Architekturbuero Sued",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 92.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.3834296724470135,
+            0.2683658170914543,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "Gemeinde Flurstueck",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.0,
+          "match_type": "below",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27436281859070466,
+            0.5780346820809249,
+            0.12443778110944528,
+            0.1001926782273603
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Mehrdeutigkeit zwischen sehr aehnlich bewerteten Kandidaten"
+    },
+    {
+      "filename": "obj-b_sheet01_right_strip.png",
+      "field_key": "plannummer",
+      "split": "acceptance",
+      "layout_type": "right_strip",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "OBJ-B-01",
+      "extracted": "OOT",
+      "candidates": [
+        {
+          "value": "OOT",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 90.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.3854389721627409,
+            0.17575757575757575,
+            0.09850107066381156,
+            0.03636363636363636
+          ]
+        },
+        {
+          "value": "qeasssew",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 38.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.33832976445396146,
+            0.3303030303030303,
+            0.14775160599571735,
+            0.03333333333333333
+          ]
+        },
+        {
+          "value": "Ove",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 89.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.4197002141327623,
+            0.5060606060606061,
+            0.06638115631691649,
+            0.03636363636363636
+          ]
+        }
+      ],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-b_sheet01_right_strip.png",
+      "field_key": "index",
+      "split": "acceptance",
+      "layout_type": "right_strip",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "A",
+      "extracted": "T",
+      "candidates": [
+        {
+          "value": "T",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 90.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.3854389721627409,
+            0.17575757575757575,
+            0.09850107066381156,
+            0.03636363636363636
+          ]
+        }
+      ],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-b_sheet02_top.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": "handwriting_value",
+      "status": "yellow",
+      "expected": null,
+      "extracted": "Planverfasser",
+      "candidates": [
+        {
+          "value": "Planverfasser",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 92.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.32762312633832974,
+            0.16489361702127658,
+            0.2505353319057816,
+            0.06914893617021277
+          ]
+        },
+        {
+          "value": "Buero",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 96.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.32762312633832974,
+            0.4946808510638298,
+            0.3083511777301927,
+            0.06914893617021277
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-b_sheet03_rotated90.png",
+      "field_key": "massstab",
+      "split": "dev",
+      "layout_type": "rotated90",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "1:200",
+      "extracted": "Adresse Bauherr Planverfasser Bauvorhaben Gemeinde Flurstueck Datum Plannummer Index",
+      "candidates": [
+        {
+          "value": "Adresse Bauherr Planverfasser Bauvorhaben Gemeinde Flurstueck Datum Plannummer Index",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 92.1,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.3897216274089936,
+            0.30057803468208094,
+            0.08565310492505353,
+            0.6339113680154143
+          ]
+        },
+        {
+          "value": "Thomas Waldkirch Buero Neubau Birkenallee 340 OBJ-B-03 Cc 1:200 18.02.2026 Hoch Dopp« Berge 4 Di",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 85.7,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.7708779443254818,
+            0.31213872832369943,
+            0.2291220556745182,
+            0.6146435452793835
+          ]
+        },
+        {
+          "value": "1:200",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 85.7,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7708779443254818,
+            0.31213872832369943,
+            0.2291220556745182,
+            0.6146435452793835
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-b_sheet03_rotated90.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "rotated90",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "OBJ-B-03",
+      "extracted": "Massstab",
+      "candidates": [
+        {
+          "value": "Massstab",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 91.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.38329764453961457,
+            0.30057803468208094,
+            0.22055674518201285,
+            0.6339113680154143
+          ]
+        },
+        {
+          "value": "Thomas",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 85.7,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7708779443254818,
+            0.31213872832369943,
+            0.2291220556745182,
+            0.6146435452793835
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-b_sheet03_rotated90.png",
+      "field_key": "index",
+      "split": "dev",
+      "layout_type": "rotated90",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "C",
+      "extracted": "B",
+      "candidates": [
+        {
+          "value": "B",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 85.7,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7708779443254818,
+            0.31213872832369943,
+            0.2291220556745182,
+            0.6146435452793835
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-b_sheet04_rotated180.png",
+      "field_key": "flurstueck",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "340",
+      "extracted": "4",
+      "candidates": [
+        {
+          "value": "4",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 94.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7730192719486081,
+            0.5144508670520231,
+            0.21841541755888652,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "340",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 92.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7708779443254818,
+            0.5799614643545279,
+            0.1670235546038544,
+            0.0905587668593449
+          ]
+        },
+        {
+          "value": "1",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 87.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7730192719486081,
+            0.7109826589595376,
+            0.1948608137044968,
+            0.0905587668593449
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-b_sheet04_rotated180.png",
+      "field_key": "massstab",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "1:100",
+      "extracted": "Datum",
+      "candidates": [
+        {
+          "value": "Datum",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.39186295503211993,
+            0.7090558766859345,
+            0.10706638115631692,
+            0.1001926782273603
+          ]
+        },
+        {
+          "value": "1:100 25.02.2026",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 87.5,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.7730192719486081,
+            0.7109826589595376,
+            0.1948608137044968,
+            0.0905587668593449
+          ]
+        },
+        {
+          "value": "1:100",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 87.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7730192719486081,
+            0.7109826589595376,
+            0.1948608137044968,
+            0.0905587668593449
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-b_sheet04_rotated180.png",
+      "field_key": "gemeinde",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "Waldkirch",
+      "extracted": "Flurstueck",
+      "candidates": [
+        {
+          "value": "Flurstueck",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 92.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.39186295503211993,
+            0.5780346820809249,
+            0.1777301927194861,
+            0.1001926782273603
+          ]
+        },
+        {
+          "value": "Waldkirch 340",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 92.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.7708779443254818,
+            0.5799614643545279,
+            0.1670235546038544,
+            0.0905587668593449
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-b_sheet04_rotated180.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "OBJ-B-04",
+      "extracted": "Index",
+      "candidates": [
+        {
+          "value": "Index",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.39186295503211993,
+            0.838150289017341,
+            0.08993576017130621,
+            0.10211946050096339
+          ]
+        },
+        {
+          "value": "OBJ-B-04 A",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 90.5,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.7730192719486081,
+            0.8420038535645472,
+            0.1734475374732334,
+            0.0905587668593449
+          ]
+        },
+        {
+          "value": "Thomas",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 95.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7730192719486081,
+            0.3179190751445087,
+            0.22483940042826553,
+            0.03275529865125241
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-b_sheet04_rotated180.png",
+      "field_key": "bauvorhaben",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "Neubau Doppelhaus",
+      "extracted": "Neubau Dopp",
+      "candidates": [
+        {
+          "value": "Neubau Dopp",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 66.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.7730192719486081,
+            0.4489402697495183,
+            0.22698072805139186,
+            0.030828516377649325
+          ]
+        },
+        {
+          "value": "Gemeinde Flurstueck",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.0,
+          "match_type": "below",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.39186295503211993,
+            0.5780346820809249,
+            0.1777301927194861,
+            0.1001926782273603
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Mehrdeutigkeit zwischen sehr aehnlich bewerteten Kandidaten"
+    },
+    {
+      "filename": "obj-b_sheet04_rotated180.png",
+      "field_key": "index",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "A",
+      "extracted": "L",
+      "candidates": [
+        {
+          "value": "L",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 91.3,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7730192719486081,
+            0.3834296724470135,
+            0.22698072805139186,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "B",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 90.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7730192719486081,
+            0.8420038535645472,
+            0.1734475374732334,
+            0.0905587668593449
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-b_sheet04_rotated180.png",
+      "field_key": "planverfasser",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "Buero Hoch Drei",
+      "extracted": "Buero Hoch L",
+      "candidates": [
+        {
+          "value": "Buero Hoch L",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 91.3,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.7730192719486081,
+            0.3834296724470135,
+            0.22698072805139186,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "Gemeinde Flurstueck",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.0,
+          "match_type": "below",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.39186295503211993,
+            0.5780346820809249,
+            0.1777301927194861,
+            0.1001926782273603
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Mehrdeutigkeit zwischen sehr aehnlich bewerteten Kandidaten"
+    },
+    {
+      "filename": "obj-b_sheet05_rotated270.png",
+      "field_key": "flurstueck",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": "decoy_text",
+      "status": "yellow",
+      "expected": "340",
+      "extracted": "4",
+      "candidates": [
+        {
+          "value": "4",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 91.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7751605995717344,
+            0.51252408477842,
+            0.22483940042826553,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "340",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 96.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7730192719486081,
+            0.5780346820809249,
+            0.17130620985010706,
+            0.0905587668593449
+          ]
+        },
+        {
+          "value": "04",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 95.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7730192719486081,
+            0.7109826589595376,
+            0.20556745182012848,
+            0.08863198458574181
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-b_sheet05_rotated270.png",
+      "field_key": "massstab",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": "decoy_text",
+      "status": "yellow",
+      "expected": "1:50",
+      "extracted": "Datum",
+      "candidates": [
+        {
+          "value": "Datum",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.39400428265524623,
+            0.7013487475915221,
+            0.11563169164882227,
+            0.10597302504816955
+          ]
+        },
+        {
+          "value": "04.02.2026 1:50",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 95.5,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.7730192719486081,
+            0.7109826589595376,
+            0.20556745182012848,
+            0.08863198458574181
+          ]
+        },
+        {
+          "value": "1:50",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 95.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7730192719486081,
+            0.7109826589595376,
+            0.20556745182012848,
+            0.08863198458574181
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-b_sheet05_rotated270.png",
+      "field_key": "gemeinde",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": "decoy_text",
+      "status": "yellow",
+      "expected": "Waldkirch",
+      "extracted": "Flurstueck",
+      "candidates": [
+        {
+          "value": "Flurstueck",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 92.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.39400428265524623,
+            0.5780346820809249,
+            0.18201284796573874,
+            0.09826589595375723
+          ]
+        },
+        {
+          "value": "Waldkirch 340",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.7730192719486081,
+            0.5780346820809249,
+            0.17130620985010706,
+            0.0905587668593449
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-b_sheet05_rotated270.png",
+      "field_key": "plannummer",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": "decoy_text",
+      "status": "yellow",
+      "expected": "OBJ-B-05",
+      "extracted": "Index",
+      "candidates": [
+        {
+          "value": "Index",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 95.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.39400428265524623,
+            0.8400770712909441,
+            0.09421841541755889,
+            0.09826589595375723
+          ]
+        },
+        {
+          "value": "OBJ-B-05 B",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 85.5,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.7730192719486081,
+            0.8420038535645472,
+            0.15417558886509636,
+            0.08863198458574181
+          ]
+        },
+        {
+          "value": "Bauherr",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 94.3,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.39400428265524623,
+            0.3044315992292871,
+            0.24197002141327623,
+            0.17533718689788053
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-b_sheet05_rotated270.png",
+      "field_key": "planverfasser",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": "decoy_text",
+      "status": "yellow",
+      "expected": "Buero Hoch Drei",
+      "extracted": "Bauvorhaben",
+      "candidates": [
+        {
+          "value": "Bauvorhaben",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "same_line",
+          "label_score": 76.5,
+          "rel_bbox": [
+            0.39400428265524623,
+            0.3044315992292871,
+            0.2334047109207709,
+            0.17533718689788053
+          ]
+        },
+        {
+          "value": "Thomas Buero Neubau Hoch Dop Ber |",
+          "assignment_confidence": 0.982,
+          "ocr_confidence": 93.6,
+          "match_type": "right_of_label_row",
+          "label_score": 76.5,
+          "rel_bbox": [
+            0.7708779443254818,
+            0.3159922928709056,
+            0.2291220556745182,
+            0.16377649325626203
+          ]
+        },
+        {
+          "value": "Gemeinde Flurstueck",
+          "assignment_confidence": 0.882,
+          "ocr_confidence": 94.0,
+          "match_type": "below",
+          "label_score": 76.5,
+          "rel_bbox": [
+            0.39186295503211993,
+            0.5780346820809249,
+            0.1841541755888651,
+            0.09826589595375723
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-b_sheet05_rotated270.png",
+      "field_key": "bauherr",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": "decoy_text",
+      "status": "yellow",
+      "expected": "Thomas Berger",
+      "extracted": "Planverfasser Bauvorhaben",
+      "candidates": [
+        {
+          "value": "Planverfasser Bauvorhaben",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.39400428265524623,
+            0.3044315992292871,
+            0.2334047109207709,
+            0.17533718689788053
+          ]
+        },
+        {
+          "value": "Thomas Buero Neubau Hoch Dop Ber |",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 93.6,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.7708779443254818,
+            0.3159922928709056,
+            0.2291220556745182,
+            0.16377649325626203
+          ]
+        },
+        {
+          "value": "Gemeinde Flurstueck",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.0,
+          "match_type": "below",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.39186295503211993,
+            0.5780346820809249,
+            0.1841541755888651,
+            0.09826589595375723
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-b_sheet07_bottom_right.png",
+      "field_key": "massstab",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "1:100",
+      "extracted": "Adresse Bauherr Planverfasser Bauvorhaben Gemeinde Flurstueck Datum Plannummer Index",
+      "candidates": [
+        {
+          "value": "Adresse Bauherr Planverfasser Bauvorhaben Gemeinde Flurstueck Datum Plannummer Index",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 92.1,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.3897216274089936,
+            0.30057803468208094,
+            0.08565310492505353,
+            0.6339113680154143
+          ]
+        },
+        {
+          "value": "Thomas Waldkirch A Buero Neubau Birkenallee 340 OBJ-B-07 1:100 18.02.2026 Hoch Dopp« Berge 4 Di",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 88.5,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.7708779443254818,
+            0.31213872832369943,
+            0.2291220556745182,
+            0.6146435452793835
+          ]
+        },
+        {
+          "value": "1:100",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 88.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7708779443254818,
+            0.31213872832369943,
+            0.2291220556745182,
+            0.6146435452793835
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-b_sheet07_bottom_right.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "OBJ-B-07",
+      "extracted": "Massstab",
+      "candidates": [
+        {
+          "value": "Massstab",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 91.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.38329764453961457,
+            0.30057803468208094,
+            0.22055674518201285,
+            0.6339113680154143
+          ]
+        },
+        {
+          "value": "Thomas",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 88.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7708779443254818,
+            0.31213872832369943,
+            0.2291220556745182,
+            0.6146435452793835
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-b_sheet08_right_strip.png",
+      "field_key": "flurstueck",
+      "split": "dev",
+      "layout_type": "right_strip",
+      "error_type": "alt_labels_and_font",
+      "status": "yellow",
+      "expected": "340",
+      "extracted": "4",
+      "candidates": [
+        {
+          "value": "4",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 94.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.45131086142322097,
+            0.5358090185676393,
+            0.19101123595505617,
+            0.017241379310344827
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-b_sheet08_right_strip.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "right_strip",
+      "error_type": "alt_labels_and_font",
+      "status": "yellow",
+      "expected": "OBJ-B-08",
+      "extracted": "Auftraggeber",
+      "candidates": [
+        {
+          "value": "Auftraggeber",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 93.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.45131086142322097,
+            0.03580901856763926,
+            0.17228464419475656,
+            0.01989389920424403
+          ]
+        },
+        {
+          "value": "Thomas",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 95.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.45131086142322097,
+            0.10212201591511937,
+            0.22846441947565543,
+            0.022546419098143235
+          ]
+        },
+        {
+          "value": "Verfasser",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 96.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.45131086142322097,
+            0.18037135278514588,
+            0.1254681647940075,
+            0.015915119363395226
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-c_sheet01_top.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": null,
+      "status": "yellow",
+      "expected": null,
+      "extracted": "ssoydsahupen",
+      "candidates": [
+        {
+          "value": "ssoydsahupen",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 0.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.0,
+            0.8404255319148937,
+            0.9253731343283582,
+            0.1595744680851064
+          ]
+        }
+      ],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-c_sheet02_rotated90.png",
+      "field_key": "plannummer",
+      "split": "acceptance",
+      "layout_type": "rotated90",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "OBJ-C-02",
+      "extracted": "Nina",
+      "candidates": [
+        {
+          "value": "Nina",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 95.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.49182561307901906,
+            0.3159922928709056,
+            0.13215258855585832,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "Bauherr",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 96.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.24931880108991825,
+            0.3236994219653179,
+            0.09536784741144415,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "Planwerk",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 94.8,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.49182561307901906,
+            0.3815028901734104,
+            0.3337874659400545,
+            0.025048169556840076
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-c_sheet02_rotated90.png",
+      "field_key": "bauvorhaben",
+      "split": "acceptance",
+      "layout_type": "rotated90",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "Dachgeschossausbau",
+      "extracted": "Gemeinde Flurstueck Massstab Datum Plannummer Index",
+      "candidates": [
+        {
+          "value": "Gemeinde Flurstueck Massstab Datum Plannummer Index",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.7,
+          "match_type": "same_line",
+          "label_score": 73.3,
+          "rel_bbox": [
+            0.24931880108991825,
+            0.43159922928709055,
+            0.06403269754768393,
+            0.5067437379576107
+          ]
+        },
+        {
+          "value": "Dachgeschossausbau Rosenstrasse Bergstetten 76/5 OBJ-C-02 B 1:50 11.02.2026 19",
+          "assignment_confidence": 0.967,
+          "ocr_confidence": 92.6,
+          "match_type": "right_of_label_row",
+          "label_score": 73.3,
+          "rel_bbox": [
+            0.49182561307901906,
+            0.44701348747591524,
+            0.24795640326975477,
+            0.4836223506743738
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-c_sheet02_rotated90.png",
+      "field_key": "index",
+      "split": "acceptance",
+      "layout_type": "rotated90",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "B",
+      "extracted": "C",
+      "candidates": [
+        {
+          "value": "C",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 92.6,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.49182561307901906,
+            0.44701348747591524,
+            0.24795640326975477,
+            0.4836223506743738
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-c_sheet02_rotated90.png",
+      "field_key": "grundstuecksadresse",
+      "split": "acceptance",
+      "layout_type": "rotated90",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "Rosenstrasse 19",
+      "extracted": "Bauvorhaben Gemeinde Flurstueck Massstab Datum Plannummer Index",
+      "candidates": [
+        {
+          "value": "Bauvorhaben Gemeinde Flurstueck Massstab Datum Plannummer Index",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.9,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.24931880108991825,
+            0.43159922928709055,
+            0.06403269754768393,
+            0.5067437379576107
+          ]
+        },
+        {
+          "value": "Dachgeschossausbau Rosenstrasse Bergstetten 76/5 OBJ-C-02 B 1:50 11.02.2026 19",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 92.6,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.49182561307901906,
+            0.44701348747591524,
+            0.24795640326975477,
+            0.4836223506743738
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-c_sheet03_no_frame.png",
+      "field_key": "bauherr",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "no_frame_noisy",
+      "status": "yellow",
+      "expected": "Nina Keller",
+      "extracted": "Nind",
+      "candidates": [
+        {
+          "value": "Nind",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 92.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.466966966966967,
+            0.18361153262518967,
+            0.03453453453453453,
+            0.019726858877086494
+          ]
+        },
+        {
+          "value": "Keller",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5255255255255256,
+            0.18361153262518967,
+            0.06006006006006006,
+            0.019726858877086494
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Mehrdeutigkeit zwischen sehr aehnlich bewerteten Kandidaten"
+    },
+    {
+      "filename": "obj-c_sheet04_rotated270.png",
+      "field_key": "flurstueck",
+      "split": "dev",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "76/5",
+      "extracted": "19",
+      "candidates": [
+        {
+          "value": "19",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 92.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.49182561307901906,
+            0.5144508670520231,
+            0.17574931880108993,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "76/5",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 94.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.49182561307901906,
+            0.5799614643545279,
+            0.1226158038147139,
+            0.09441233140655106
+          ]
+        },
+        {
+          "value": "1",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 87.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.49182561307901906,
+            0.7109826589595376,
+            0.1226158038147139,
+            0.0905587668593449
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-c_sheet04_rotated270.png",
+      "field_key": "massstab",
+      "split": "dev",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "1:100",
+      "extracted": "Datum",
+      "candidates": [
+        {
+          "value": "Datum",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.24931880108991825,
+            0.7090558766859345,
+            0.0681198910081744,
+            0.1001926782273603
+          ]
+        },
+        {
+          "value": "1:100 25.02.2026",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 87.5,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.49182561307901906,
+            0.7109826589595376,
+            0.1226158038147139,
+            0.0905587668593449
+          ]
+        },
+        {
+          "value": "1:100",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 87.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.49182561307901906,
+            0.7109826589595376,
+            0.1226158038147139,
+            0.0905587668593449
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-c_sheet04_rotated270.png",
+      "field_key": "gemeinde",
+      "split": "dev",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "Bergstetten",
+      "extracted": "Flurstueck",
+      "candidates": [
+        {
+          "value": "Flurstueck",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 93.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.24931880108991825,
+            0.5780346820809249,
+            0.11307901907356949,
+            0.1001926782273603
+          ]
+        },
+        {
+          "value": "Bergstetten 76/5",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.49182561307901906,
+            0.5799614643545279,
+            0.1226158038147139,
+            0.09441233140655106
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-c_sheet04_rotated270.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "OBJ-C-04",
+      "extracted": "Index",
+      "candidates": [
+        {
+          "value": "Index",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.24931880108991825,
+            0.838150289017341,
+            0.05722070844686648,
+            0.10211946050096339
+          ]
+        },
+        {
+          "value": "OBJ-C-04 A",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 91.5,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.49182561307901906,
+            0.8420038535645472,
+            0.11171662125340599,
+            0.0905587668593449
+          ]
+        },
+        {
+          "value": "Nina",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 95.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.49182561307901906,
+            0.3179190751445087,
+            0.11580381471389646,
+            0.025048169556840076
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-c_sheet04_rotated270.png",
+      "field_key": "index",
+      "split": "dev",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "A",
+      "extracted": "C",
+      "candidates": [
+        {
+          "value": "C",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 91.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.49182561307901906,
+            0.8420038535645472,
+            0.11171662125340599,
+            0.0905587668593449
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-c_sheet05_no_frame.png",
+      "field_key": "flurstueck",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "76/5",
+      "extracted": "19",
+      "candidates": [
+        {
+          "value": "19",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 96.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5345345345345346,
+            0.18664643399089528,
+            0.28378378378378377,
+            0.19271623672230653
+          ]
+        },
+        {
+          "value": "76/5",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 91.8,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.466966966966967,
+            0.18816388467374812,
+            0.27177177177177175,
+            0.5371775417298937
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-c_sheet05_no_frame.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "OBJ-C-05",
+      "extracted": "Adresse",
+      "candidates": [
+        {
+          "value": "Adresse",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 93.2,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.18018018018018017,
+            0.18057663125948406,
+            0.17867867867867868,
+            0.5569044006069803
+          ]
+        },
+        {
+          "value": "Keller",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 96.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5345345345345346,
+            0.18664643399089528,
+            0.28378378378378377,
+            0.19271623672230653
+          ]
+        },
+        {
+          "value": "76/5",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 91.8,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.466966966966967,
+            0.18816388467374812,
+            0.27177177177177175,
+            0.5371775417298937
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-c_sheet05_no_frame.png",
+      "field_key": "index",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "B",
+      "extracted": "C",
+      "candidates": [
+        {
+          "value": "C",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 91.8,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.466966966966967,
+            0.18816388467374812,
+            0.27177177177177175,
+            0.5371775417298937
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-c_sheet05_no_frame.png",
+      "field_key": "grundstuecksadresse",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "Rosenstrasse 19",
+      "extracted": "Gemeinde: Bauherr: Planverfasser: Bauvorhaben: Flurstueck: Massstab: Datum: Plannummer: Index:",
+      "candidates": [
+        {
+          "value": "Gemeinde: Bauherr: Planverfasser: Bauvorhaben: Flurstueck: Massstab: Datum: Plannummer: Index:",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 93.2,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.1816816816816817,
+            0.18057663125948406,
+            0.07507507507507508,
+            0.5569044006069803
+          ]
+        },
+        {
+          "value": "Keller Keller 19 und Partner",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5345345345345346,
+            0.18664643399089528,
+            0.28378378378378377,
+            0.19271623672230653
+          ]
+        },
+        {
+          "value": "76/5 04.02.2026 OBJ-C-05 Nina Planwerk Dachgeschossausbau Rosenstrasse Bergstetten 1:50 B",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 91.8,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.466966966966967,
+            0.18816388467374812,
+            0.27177177177177175,
+            0.5371775417298937
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-c_sheet07_right_strip.png",
+      "field_key": "index",
+      "split": "acceptance",
+      "layout_type": "right_strip",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "A",
+      "extracted": "C",
+      "candidates": [
+        {
+          "value": "C",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 85.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.45131086142322097,
+            0.8373121131741822,
+            0.13857677902621723,
+            0.011494252873563218
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-d_sheet01_top.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": null,
+      "status": "yellow",
+      "expected": null,
+      "extracted": "Planverfasser",
+      "candidates": [
+        {
+          "value": "Planverfasser",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 92.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.32762312633832974,
+            0.11347517730496454,
+            0.2334047109207709,
+            0.04609929078014184
+          ]
+        },
+        {
+          "value": "Architekturbuero",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 94.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.32762312633832974,
+            0.3333333333333333,
+            0.37901498929336186,
+            0.04609929078014184
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-d_sheet02_rotated90.png",
+      "field_key": "flurstueck",
+      "split": "dev",
+      "layout_type": "rotated90",
+      "error_type": "inconsistent_flurstueck",
+      "status": "yellow",
+      "expected": "245/3X",
+      "extracted": "12",
+      "candidates": [
+        {
+          "value": "12",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 94.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5427286356821589,
+            0.5144508670520231,
+            0.17541229385307347,
+            0.030828516377649325
+          ]
+        },
+        {
+          "value": "245",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 91.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.5780346820809249,
+            0.14992503748125938,
+            0.09441233140655106
+          ]
+        },
+        {
+          "value": "02",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 82.8,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.7109826589595376,
+            0.14392803598200898,
+            0.21965317919075145
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-d_sheet02_rotated90.png",
+      "field_key": "massstab",
+      "split": "dev",
+      "layout_type": "rotated90",
+      "error_type": "inconsistent_flurstueck",
+      "status": "yellow",
+      "expected": "1:50",
+      "extracted": "Datum Plannummer Index",
+      "candidates": [
+        {
+          "value": "Datum Plannummer Index",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 93.3,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27586206896551724,
+            0.7090558766859345,
+            0.06596701649175413,
+            0.22928709055876687
+          ]
+        },
+        {
+          "value": "08J-D-02 1:50 11.02.2026 B",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 82.8,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.7109826589595376,
+            0.14392803598200898,
+            0.21965317919075145
+          ]
+        },
+        {
+          "value": "1:50",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 82.8,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.7109826589595376,
+            0.14392803598200898,
+            0.21965317919075145
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-d_sheet02_rotated90.png",
+      "field_key": "datum",
+      "split": "dev",
+      "layout_type": "rotated90",
+      "error_type": "inconsistent_flurstueck",
+      "status": "yellow",
+      "expected": "11.02.2026",
+      "extracted": "Wolf",
+      "candidates": [
+        {
+          "value": "Wolf",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "same_line",
+          "label_score": 72.7,
+          "rel_bbox": [
+            0.6326836581709145,
+            0.3159922928709056,
+            0.053973013493253376,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "Architekturbuero Nord",
+          "assignment_confidence": 0.864,
+          "ocr_confidence": 94.0,
+          "match_type": "below",
+          "label_score": 72.7,
+          "rel_bbox": [
+            0.5397301349325337,
+            0.3815028901734104,
+            0.2818590704647676,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "11.02.2026",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 82.8,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.7109826589595376,
+            0.14392803598200898,
+            0.21965317919075145
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "OCR-Lesefehler oder falsch abgegrenzte Zelle (keine eindeutige Ursache automatisch zuordenbar)"
+    },
+    {
+      "filename": "obj-d_sheet02_rotated90.png",
+      "field_key": "gemeinde",
+      "split": "dev",
+      "layout_type": "rotated90",
+      "error_type": "inconsistent_flurstueck",
+      "status": "yellow",
+      "expected": "Musterstadt",
+      "extracted": "Flurstueck",
+      "candidates": [
+        {
+          "value": "Flurstueck",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 92.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27586206896551724,
+            0.5780346820809249,
+            0.12743628185907047,
+            0.09826589595375723
+          ]
+        },
+        {
+          "value": "245/3X Musterstadt",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 91.5,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.5780346820809249,
+            0.14992503748125938,
+            0.09441233140655106
+          ]
+        },
+        {
+          "value": "Massstab Datum Plannummer Index",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.0,
+          "match_type": "below",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27586206896551724,
+            0.7090558766859345,
+            0.15892053973013492,
+            0.22928709055876687
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-d_sheet02_rotated90.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "rotated90",
+      "error_type": "inconsistent_flurstueck",
+      "status": "yellow",
+      "expected": "OBJ-D-02",
+      "extracted": "Stefan",
+      "candidates": [
+        {
+          "value": "Stefan",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 95.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.3159922928709056,
+            0.1454272863568216,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "Bauherr",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 96.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.27586206896551724,
+            0.3236994219653179,
+            0.09895052473763119,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "Architekturbuero",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 94.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5397301349325337,
+            0.3815028901734104,
+            0.2818590704647676,
+            0.025048169556840076
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-d_sheet02_rotated90.png",
+      "field_key": "index",
+      "split": "dev",
+      "layout_type": "rotated90",
+      "error_type": "inconsistent_flurstueck",
+      "status": "yellow",
+      "expected": "B",
+      "extracted": "D",
+      "candidates": [
+        {
+          "value": "D",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 82.8,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.7109826589595376,
+            0.14392803598200898,
+            0.21965317919075145
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-d_sheet02_rotated90.png",
+      "field_key": "planverfasser",
+      "split": "dev",
+      "layout_type": "rotated90",
+      "error_type": "inconsistent_flurstueck",
+      "status": "yellow",
+      "expected": "Architekturbuero Nord",
+      "extracted": "Nord",
+      "candidates": [
+        {
+          "value": "Nord",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "same_line",
+          "label_score": 72.0,
+          "rel_bbox": [
+            0.7661169415292354,
+            0.3815028901734104,
+            0.05547226386806597,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "Architekturbuero Nord",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5397301349325337,
+            0.3815028901734104,
+            0.2818590704647676,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "Gemeinde Flurstueck",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.0,
+          "match_type": "below",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27436281859070466,
+            0.5780346820809249,
+            0.12893553223388307,
+            0.09826589595375723
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Mehrdeutigkeit zwischen sehr aehnlich bewerteten Kandidaten"
+    },
+    {
+      "filename": "obj-d_sheet03_rotated180.png",
+      "field_key": "flurstueck",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "245/3",
+      "extracted": "002",
+      "candidates": [
+        {
+          "value": "002",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 31.8,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.37789904502046384,
+            0.05732484076433121,
+            0.1364256480218281,
+            0.2611464968152866
+          ]
+        }
+      ],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet03_rotated180.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "OBJ-D-03",
+      "extracted": "9Z0Z",
+      "candidates": [
+        {
+          "value": "9Z0Z",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 31.8,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.37789904502046384,
+            0.05732484076433121,
+            0.1364256480218281,
+            0.2611464968152866
+          ]
+        },
+        {
+          "value": "Jowrumuueld",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 55.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.6030013642564802,
+            0.06794055201698514,
+            0.14870395634379263,
+            0.24416135881104034
+          ]
+        },
+        {
+          "value": "yoonysinya",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 0.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.6275579809004093,
+            0.35668789808917195,
+            0.12414733969986358,
+            0.027600849256900213
+          ]
+        }
+      ],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet03_rotated180.png",
+      "field_key": "index",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "C",
+      "extracted": "Z0",
+      "candidates": [
+        {
+          "value": "Z0",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 31.8,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.37789904502046384,
+            0.05732484076433121,
+            0.1364256480218281,
+            0.2611464968152866
+          ]
+        },
+        {
+          "value": "zı",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 44.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.3424283765347885,
+            0.5010615711252654,
+            0.1664392905866303,
+            0.03397027600849257
+          ]
+        }
+      ],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet04_rotated270.png",
+      "field_key": "plannummer",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "OBJ-D-04",
+      "extracted": "sOUUNUUe",
+      "candidates": [
+        {
+          "value": "sOUUNUUe",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 33.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.7666666666666667,
+            0.07218683651804671,
+            0.15166666666666667,
+            0.17197452229299362
+          ]
+        },
+        {
+          "value": "92022052",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 41.3,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.48333333333333334,
+            0.08067940552016985,
+            0.14,
+            0.16985138004246284
+          ]
+        },
+        {
+          "value": "geisssen",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 62.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.8016666666666666,
+            0.28874734607218683,
+            0.11666666666666667,
+            0.027600849256900213
+          ]
+        }
+      ],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet04_rotated270.png",
+      "field_key": "index",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "A",
+      "extracted": "y0",
+      "candidates": [
+        {
+          "value": "y0",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 41.3,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.48333333333333334,
+            0.08067940552016985,
+            0.14,
+            0.16985138004246284
+          ]
+        },
+        {
+          "value": "Z",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 20.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.45,
+            0.505307855626327,
+            0.17166666666666666,
+            0.036093418259023353
+          ]
+        }
+      ],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet05_no_frame.png",
+      "field_key": "datum",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "missing_date",
+      "status": "yellow",
+      "expected": null,
+      "extracted": "Architekturbuero Neubau Musterweg Musterstadt 245/3 1:50 Wolf Einfamilienhaus 12",
+      "candidates": [
+        {
+          "value": "Architekturbuero Neubau Musterweg Musterstadt 245/3 1:50 Wolf Einfamilienhaus 12",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.2,
+          "match_type": "same_line",
+          "label_score": 72.7,
+          "rel_bbox": [
+            0.5183333333333333,
+            0.18816388467374812,
+            0.18333333333333332,
+            0.36570561456752654
+          ]
+        },
+        {
+          "value": "OBJ-D-05 B",
+          "assignment_confidence": 0.864,
+          "ocr_confidence": 91.5,
+          "match_type": "below",
+          "label_score": 72.7,
+          "rel_bbox": [
+            0.5183333333333333,
+            0.6494688922610015,
+            0.13333333333333333,
+            0.07738998482549317
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereich oder Zelle falsch abgegrenzt"
+    },
+    {
+      "filename": "obj-d_sheet05_no_frame.png",
+      "field_key": "plannummer",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "missing_date",
+      "status": "yellow",
+      "expected": "OBJ-D-05",
+      "extracted": "Index:",
+      "candidates": [
+        {
+          "value": "Index:",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.20166666666666666,
+            0.6433990895295902,
+            0.07666666666666666,
+            0.09863429438543247
+          ]
+        },
+        {
+          "value": "OBJ-D-05 B",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 91.5,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5183333333333333,
+            0.6494688922610015,
+            0.13333333333333333,
+            0.07738998482549317
+          ]
+        },
+        {
+          "value": "Bauherr",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 94.6,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.20166666666666666,
+            0.18209408194233687,
+            0.18666666666666668,
+            0.38694992412746587
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-d_sheet05_no_frame.png",
+      "field_key": "index",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "missing_date",
+      "status": "yellow",
+      "expected": "B",
+      "extracted": "D",
+      "candidates": [
+        {
+          "value": "D",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 91.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5183333333333333,
+            0.6494688922610015,
+            0.13333333333333333,
+            0.07738998482549317
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-d_sheet05_no_frame.png",
+      "field_key": "planverfasser",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "missing_date",
+      "status": "yellow",
+      "expected": "Architekturbuero Nord",
+      "extracted": "Bauvorhaben: Adresse: Gemeinde: Flurstueck: Massstab:",
+      "candidates": [
+        {
+          "value": "Bauvorhaben: Adresse: Gemeinde: Flurstueck: Massstab:",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.6,
+          "match_type": "same_line",
+          "label_score": 74.3,
+          "rel_bbox": [
+            0.20166666666666666,
+            0.18209408194233687,
+            0.13166666666666665,
+            0.38694992412746587
+          ]
+        },
+        {
+          "value": "Stefan Architekturbuero Neubau Musterweg Musterstadt 245/3 1:50 Wolf Einfamilienhaus 12",
+          "assignment_confidence": 0.971,
+          "ocr_confidence": 94.4,
+          "match_type": "right_of_label_row",
+          "label_score": 74.3,
+          "rel_bbox": [
+            0.5183333333333333,
+            0.18816388467374812,
+            0.32,
+            0.36570561456752654
+          ]
+        },
+        {
+          "value": "Nord",
+          "assignment_confidence": 0.971,
+          "ocr_confidence": 96.0,
+          "match_type": "right_of_label_row",
+          "label_score": 74.3,
+          "rel_bbox": [
+            0.7516666666666667,
+            0.24582701062215478,
+            0.06166666666666667,
+            0.019726858877086494
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-d_sheet05_no_frame.png",
+      "field_key": "bauherr",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "missing_date",
+      "status": "yellow",
+      "expected": "Stefan Wolf",
+      "extracted": "Planverfasser: Bauvorhaben: Adresse: Gemeinde: Flurstueck: Massstab:",
+      "candidates": [
+        {
+          "value": "Planverfasser: Bauvorhaben: Adresse: Gemeinde: Flurstueck: Massstab:",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.3,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.20166666666666666,
+            0.18209408194233687,
+            0.13166666666666665,
+            0.38694992412746587
+          ]
+        },
+        {
+          "value": "Stefan Architekturbuero Neubau Musterweg Musterstadt 245/3 1:50 Wolf Einfamilienhaus 12",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.4,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5183333333333333,
+            0.18816388467374812,
+            0.32,
+            0.36570561456752654
+          ]
+        },
+        {
+          "value": "Nord",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.7516666666666667,
+            0.24582701062215478,
+            0.06166666666666667,
+            0.019726858877086494
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-d_sheet06_bottom_right.png",
+      "field_key": "flurstueck",
+      "split": "acceptance",
+      "layout_type": "bottom_right",
+      "error_type": "decoy_text",
+      "status": "yellow",
+      "expected": "245/3",
+      "extracted": "12",
+      "candidates": [
+        {
+          "value": "12",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 94.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5427286356821589,
+            0.5144508670520231,
+            0.17541229385307347,
+            0.030828516377649325
+          ]
+        },
+        {
+          "value": "245/3",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 91.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.5780346820809249,
+            0.14992503748125938,
+            0.09441233140655106
+          ]
+        },
+        {
+          "value": "1",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 93.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5427286356821589,
+            0.7109826589595376,
+            0.1424287856071964,
+            0.08863198458574181
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Formatbasierter Kandidat ohne Beschriftungstreffer falsch gewaehlt"
+    },
+    {
+      "filename": "obj-d_sheet06_bottom_right.png",
+      "field_key": "massstab",
+      "split": "acceptance",
+      "layout_type": "bottom_right",
+      "error_type": "decoy_text",
+      "status": "yellow",
+      "expected": "1:200",
+      "extracted": "Datum",
+      "candidates": [
+        {
+          "value": "Datum",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 91.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27586206896551724,
+            0.7090558766859345,
+            0.08095952023988005,
+            0.09826589595375723
+          ]
+        },
+        {
+          "value": "1:200 11.02.2026",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 93.5,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5427286356821589,
+            0.7109826589595376,
+            0.1424287856071964,
+            0.08863198458574181
+          ]
+        },
+        {
+          "value": "1:200",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 93.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5427286356821589,
+            0.7109826589595376,
+            0.1424287856071964,
+            0.08863198458574181
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-d_sheet06_bottom_right.png",
+      "field_key": "datum",
+      "split": "acceptance",
+      "layout_type": "bottom_right",
+      "error_type": "decoy_text",
+      "status": "yellow",
+      "expected": "11.02.2026",
+      "extracted": "Wolf",
+      "candidates": [
+        {
+          "value": "Wolf",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "same_line",
+          "label_score": 72.7,
+          "rel_bbox": [
+            0.6326836581709145,
+            0.3159922928709056,
+            0.053973013493253376,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "Architekturbuero Nord",
+          "assignment_confidence": 0.864,
+          "ocr_confidence": 94.0,
+          "match_type": "below",
+          "label_score": 72.7,
+          "rel_bbox": [
+            0.5397301349325337,
+            0.3815028901734104,
+            0.2818590704647676,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "11.02.2026",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 93.5,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5427286356821589,
+            0.7109826589595376,
+            0.1424287856071964,
+            0.08863198458574181
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "OCR-Lesefehler oder falsch abgegrenzte Zelle (keine eindeutige Ursache automatisch zuordenbar)"
+    },
+    {
+      "filename": "obj-d_sheet06_bottom_right.png",
+      "field_key": "gemeinde",
+      "split": "acceptance",
+      "layout_type": "bottom_right",
+      "error_type": "decoy_text",
+      "status": "yellow",
+      "expected": "Musterstadt",
+      "extracted": "Flurstueck",
+      "candidates": [
+        {
+          "value": "Flurstueck",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 92.0,
+          "match_type": "same_line",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27586206896551724,
+            0.5780346820809249,
+            0.12743628185907047,
+            0.09826589595375723
+          ]
+        },
+        {
+          "value": "245/3 Musterstadt",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 91.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.5780346820809249,
+            0.14992503748125938,
+            0.09441233140655106
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen"
+    },
+    {
+      "filename": "obj-d_sheet06_bottom_right.png",
+      "field_key": "index",
+      "split": "acceptance",
+      "layout_type": "bottom_right",
+      "error_type": "decoy_text",
+      "status": "yellow",
+      "expected": "C",
+      "extracted": "Cc",
+      "candidates": [
+        {
+          "value": "Cc",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 56.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.9075144508670521,
+            0.014992503748125937,
+            0.023121387283236993
+          ]
+        },
+        {
+          "value": "D",
+          "assignment_confidence": 0.55,
+          "ocr_confidence": 81.0,
+          "match_type": "format",
+          "label_score": 0.0,
+          "rel_bbox": [
+            0.5412293853073463,
+            0.8420038535645472,
+            0.11244377811094453,
+            0.028901734104046242
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "OCR-Lesefehler oder falsch abgegrenzte Zelle (keine eindeutige Ursache automatisch zuordenbar)"
+    },
+    {
+      "filename": "obj-d_sheet06_bottom_right.png",
+      "field_key": "planverfasser",
+      "split": "acceptance",
+      "layout_type": "bottom_right",
+      "error_type": "decoy_text",
+      "status": "yellow",
+      "expected": "Architekturbuero Nord",
+      "extracted": "Nord",
+      "candidates": [
+        {
+          "value": "Nord",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "same_line",
+          "label_score": 72.0,
+          "rel_bbox": [
+            0.7661169415292354,
+            0.3815028901734104,
+            0.05547226386806597,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "Architekturbuero Nord",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.0,
+          "match_type": "right_of_label_row",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.5397301349325337,
+            0.3815028901734104,
+            0.2818590704647676,
+            0.025048169556840076
+          ]
+        },
+        {
+          "value": "Gemeinde Flurstueck",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 94.0,
+          "match_type": "below",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.27436281859070466,
+            0.5780346820809249,
+            0.12893553223388307,
+            0.09826589595375723
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Mehrdeutigkeit zwischen sehr aehnlich bewerteten Kandidaten"
+    },
+    {
+      "filename": "obj-d_sheet07_right_strip.png",
+      "field_key": "datum",
+      "split": "dev",
+      "layout_type": "right_strip",
+      "error_type": null,
+      "status": "yellow",
+      "expected": "18.02.2026",
+      "extracted": "Wolf",
+      "candidates": [
+        {
+          "value": "Wolf",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "same_line",
+          "label_score": 72.7,
+          "rel_bbox": [
+            0.5636704119850188,
+            0.0671971706454465,
+            0.07303370786516854,
+            0.011494252873563218
+          ]
+        },
+        {
+          "value": "18.02.2026",
+          "assignment_confidence": 1.0,
+          "ocr_confidence": 96.0,
+          "match_type": "below",
+          "label_score": 100.0,
+          "rel_bbox": [
+            0.45318352059925093,
+            0.7435897435897436,
+            0.17790262172284643,
+            0.010610079575596816
+          ]
+        },
+        {
+          "value": "Architekturbuero Nord",
+          "assignment_confidence": 0.864,
+          "ocr_confidence": 94.0,
+          "match_type": "below",
+          "label_score": 72.7,
+          "rel_bbox": [
+            0.449438202247191,
+            0.16357206012378425,
+            0.3707865168539326,
+            0.011494252873563218
+          ]
+        }
+      ],
+      "rotation_mismatch": false,
+      "likely_cause": "Mehrdeutigkeit zwischen sehr aehnlich bewerteten Kandidaten"
+    }
+  ],
+  "no_result_cases": [
+    {
+      "filename": "obj-a_sheet01_bottom_right.png",
+      "field_key": "massstab",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": "inconsistent_flurstueck",
+      "status": "red",
+      "expected": "1:100",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet01_bottom_right.png",
+      "field_key": "datum",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": "inconsistent_flurstueck",
+      "status": "red",
+      "expected": "04.02.2026",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet01_bottom_right.png",
+      "field_key": "gemeinde",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": "inconsistent_flurstueck",
+      "status": "red",
+      "expected": "Seehausen",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet01_bottom_right.png",
+      "field_key": "bauvorhaben",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": "inconsistent_flurstueck",
+      "status": "red",
+      "expected": "Anbau Garage",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet01_bottom_right.png",
+      "field_key": "planverfasser",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": "inconsistent_flurstueck",
+      "status": "red",
+      "expected": "Architekturbuero Sued",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet01_bottom_right.png",
+      "field_key": "bauherr",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": "inconsistent_flurstueck",
+      "status": "red",
+      "expected": "Petra Gruber",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet01_bottom_right.png",
+      "field_key": "grundstuecksadresse",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": "inconsistent_flurstueck",
+      "status": "red",
+      "expected": "Lindenweg 7",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet03_top.png",
+      "field_key": "bauvorhaben",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": null,
+      "status": "red",
+      "expected": "Anbau Garage",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet03_top.png",
+      "field_key": "planverfasser",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": null,
+      "status": "red",
+      "expected": "Architekturbuero Sued",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet03_top.png",
+      "field_key": "bauherr",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": null,
+      "status": "red",
+      "expected": "Petra Gruber",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet03_top.png",
+      "field_key": "grundstuecksadresse",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": null,
+      "status": "red",
+      "expected": "Lindenweg 7",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet05_rotated180.png",
+      "field_key": "massstab",
+      "split": "acceptance",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "red",
+      "expected": "1:50",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet05_rotated180.png",
+      "field_key": "datum",
+      "split": "acceptance",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "red",
+      "expected": "04.02.2026",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet05_rotated180.png",
+      "field_key": "gemeinde",
+      "split": "acceptance",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "red",
+      "expected": "Seehausen",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet05_rotated180.png",
+      "field_key": "bauvorhaben",
+      "split": "acceptance",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "red",
+      "expected": "Anbau Garage",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet05_rotated180.png",
+      "field_key": "planverfasser",
+      "split": "acceptance",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "red",
+      "expected": "Architekturbuero Sued",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet05_rotated180.png",
+      "field_key": "bauherr",
+      "split": "acceptance",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "red",
+      "expected": "Petra Gruber",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet05_rotated180.png",
+      "field_key": "grundstuecksadresse",
+      "split": "acceptance",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "red",
+      "expected": "Lindenweg 7",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-a_sheet06_rotated270.png",
+      "field_key": "bauvorhaben",
+      "split": "dev",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "red",
+      "expected": "Anbau Garage",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-a_sheet06_rotated270.png",
+      "field_key": "bauherr",
+      "split": "dev",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "red",
+      "expected": "Petra Gruber",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-a_sheet07_no_frame.png",
+      "field_key": "massstab",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "impossible_scale",
+      "status": "red",
+      "expected": "1:0",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereichs-Erkennung findet keinen sicheren Kandidaten"
+    },
+    {
+      "filename": "obj-a_sheet07_no_frame.png",
+      "field_key": "gemeinde",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "impossible_scale",
+      "status": "red",
+      "expected": "Seehausen",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereichs-Erkennung findet keinen sicheren Kandidaten"
+    },
+    {
+      "filename": "obj-a_sheet07_no_frame.png",
+      "field_key": "bauvorhaben",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "impossible_scale",
+      "status": "red",
+      "expected": "Anbau Garage",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereichs-Erkennung findet keinen sicheren Kandidaten"
+    },
+    {
+      "filename": "obj-a_sheet07_no_frame.png",
+      "field_key": "grundstuecksadresse",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "impossible_scale",
+      "status": "red",
+      "expected": "Lindenweg 7",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereichs-Erkennung findet keinen sicheren Kandidaten"
+    },
+    {
+      "filename": "obj-b_sheet01_right_strip.png",
+      "field_key": "flurstueck",
+      "split": "acceptance",
+      "layout_type": "right_strip",
+      "error_type": null,
+      "status": "red",
+      "expected": "340",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-b_sheet01_right_strip.png",
+      "field_key": "massstab",
+      "split": "acceptance",
+      "layout_type": "right_strip",
+      "error_type": null,
+      "status": "red",
+      "expected": "1:100",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-b_sheet01_right_strip.png",
+      "field_key": "datum",
+      "split": "acceptance",
+      "layout_type": "right_strip",
+      "error_type": null,
+      "status": "red",
+      "expected": "04.02.2026",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-b_sheet01_right_strip.png",
+      "field_key": "gemeinde",
+      "split": "acceptance",
+      "layout_type": "right_strip",
+      "error_type": null,
+      "status": "red",
+      "expected": "Waldkirch",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-b_sheet01_right_strip.png",
+      "field_key": "bauvorhaben",
+      "split": "acceptance",
+      "layout_type": "right_strip",
+      "error_type": null,
+      "status": "red",
+      "expected": "Neubau Doppelhaus",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-b_sheet01_right_strip.png",
+      "field_key": "planverfasser",
+      "split": "acceptance",
+      "layout_type": "right_strip",
+      "error_type": null,
+      "status": "red",
+      "expected": "Buero Hoch Drei",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-b_sheet01_right_strip.png",
+      "field_key": "bauherr",
+      "split": "acceptance",
+      "layout_type": "right_strip",
+      "error_type": null,
+      "status": "red",
+      "expected": "Thomas Berger",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-b_sheet01_right_strip.png",
+      "field_key": "grundstuecksadresse",
+      "split": "acceptance",
+      "layout_type": "right_strip",
+      "error_type": null,
+      "status": "red",
+      "expected": "Birkenallee 4",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-b_sheet02_top.png",
+      "field_key": "bauvorhaben",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": "handwriting_value",
+      "status": "red",
+      "expected": "Neubau Doppelhaus",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-b_sheet02_top.png",
+      "field_key": "bauherr",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": "handwriting_value",
+      "status": "red",
+      "expected": "Thomas Berger",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-b_sheet02_top.png",
+      "field_key": "grundstuecksadresse",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": "handwriting_value",
+      "status": "red",
+      "expected": "Birkenallee 4",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-b_sheet03_rotated90.png",
+      "field_key": "gemeinde",
+      "split": "dev",
+      "layout_type": "rotated90",
+      "error_type": null,
+      "status": "red",
+      "expected": "Waldkirch",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-b_sheet03_rotated90.png",
+      "field_key": "bauvorhaben",
+      "split": "dev",
+      "layout_type": "rotated90",
+      "error_type": null,
+      "status": "red",
+      "expected": "Neubau Doppelhaus",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-b_sheet03_rotated90.png",
+      "field_key": "planverfasser",
+      "split": "dev",
+      "layout_type": "rotated90",
+      "error_type": null,
+      "status": "red",
+      "expected": "Buero Hoch Drei",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-b_sheet03_rotated90.png",
+      "field_key": "bauherr",
+      "split": "dev",
+      "layout_type": "rotated90",
+      "error_type": null,
+      "status": "red",
+      "expected": "Thomas Berger",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-b_sheet03_rotated90.png",
+      "field_key": "grundstuecksadresse",
+      "split": "dev",
+      "layout_type": "rotated90",
+      "error_type": null,
+      "status": "red",
+      "expected": "Birkenallee 4",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-b_sheet05_rotated270.png",
+      "field_key": "bauvorhaben",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": "decoy_text",
+      "status": "red",
+      "expected": "Neubau Doppelhaus",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-b_sheet07_bottom_right.png",
+      "field_key": "gemeinde",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": null,
+      "status": "red",
+      "expected": "Waldkirch",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-b_sheet07_bottom_right.png",
+      "field_key": "bauvorhaben",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": null,
+      "status": "red",
+      "expected": "Neubau Doppelhaus",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-b_sheet07_bottom_right.png",
+      "field_key": "planverfasser",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": null,
+      "status": "red",
+      "expected": "Buero Hoch Drei",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-b_sheet07_bottom_right.png",
+      "field_key": "bauherr",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": null,
+      "status": "red",
+      "expected": "Thomas Berger",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-b_sheet07_bottom_right.png",
+      "field_key": "grundstuecksadresse",
+      "split": "dev",
+      "layout_type": "bottom_right",
+      "error_type": null,
+      "status": "red",
+      "expected": "Birkenallee 4",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-b_sheet08_right_strip.png",
+      "field_key": "massstab",
+      "split": "dev",
+      "layout_type": "right_strip",
+      "error_type": "alt_labels_and_font",
+      "status": "red",
+      "expected": "1:50",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-b_sheet08_right_strip.png",
+      "field_key": "datum",
+      "split": "dev",
+      "layout_type": "right_strip",
+      "error_type": "alt_labels_and_font",
+      "status": "red",
+      "expected": "25.02.2026",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-b_sheet08_right_strip.png",
+      "field_key": "index",
+      "split": "dev",
+      "layout_type": "right_strip",
+      "error_type": "alt_labels_and_font",
+      "status": "red",
+      "expected": "B",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-c_sheet01_top.png",
+      "field_key": "bauvorhaben",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": null,
+      "status": "red",
+      "expected": "Dachgeschossausbau",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-c_sheet01_top.png",
+      "field_key": "planverfasser",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": null,
+      "status": "red",
+      "expected": "Planwerk Keller und Partner",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-c_sheet01_top.png",
+      "field_key": "bauherr",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": null,
+      "status": "red",
+      "expected": "Nina Keller",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-c_sheet01_top.png",
+      "field_key": "grundstuecksadresse",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": null,
+      "status": "red",
+      "expected": "Rosenstrasse 19",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-c_sheet02_rotated90.png",
+      "field_key": "gemeinde",
+      "split": "acceptance",
+      "layout_type": "rotated90",
+      "error_type": null,
+      "status": "red",
+      "expected": "Bergstetten",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-c_sheet05_no_frame.png",
+      "field_key": "gemeinde",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": null,
+      "status": "red",
+      "expected": "Bergstetten",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereichs-Erkennung findet keinen sicheren Kandidaten"
+    },
+    {
+      "filename": "obj-c_sheet05_no_frame.png",
+      "field_key": "bauvorhaben",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": null,
+      "status": "red",
+      "expected": "Dachgeschossausbau",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereichs-Erkennung findet keinen sicheren Kandidaten"
+    },
+    {
+      "filename": "obj-c_sheet05_no_frame.png",
+      "field_key": "planverfasser",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": null,
+      "status": "red",
+      "expected": "Planwerk Keller und Partner",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereichs-Erkennung findet keinen sicheren Kandidaten"
+    },
+    {
+      "filename": "obj-c_sheet05_no_frame.png",
+      "field_key": "bauherr",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": null,
+      "status": "red",
+      "expected": "Nina Keller",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereichs-Erkennung findet keinen sicheren Kandidaten"
+    },
+    {
+      "filename": "obj-c_sheet06_bottom_right.png",
+      "field_key": "flurstueck",
+      "split": "acceptance",
+      "layout_type": "bottom_right",
+      "error_type": "degraded_scan",
+      "status": "red",
+      "expected": "76/5",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-c_sheet06_bottom_right.png",
+      "field_key": "massstab",
+      "split": "acceptance",
+      "layout_type": "bottom_right",
+      "error_type": "degraded_scan",
+      "status": "red",
+      "expected": "1:200",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-c_sheet06_bottom_right.png",
+      "field_key": "datum",
+      "split": "acceptance",
+      "layout_type": "bottom_right",
+      "error_type": "degraded_scan",
+      "status": "red",
+      "expected": "11.02.2026",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-c_sheet06_bottom_right.png",
+      "field_key": "gemeinde",
+      "split": "acceptance",
+      "layout_type": "bottom_right",
+      "error_type": "degraded_scan",
+      "status": "red",
+      "expected": "Bergstetten",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-c_sheet06_bottom_right.png",
+      "field_key": "plannummer",
+      "split": "acceptance",
+      "layout_type": "bottom_right",
+      "error_type": "degraded_scan",
+      "status": "red",
+      "expected": "OBJ-C-06",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-c_sheet06_bottom_right.png",
+      "field_key": "bauvorhaben",
+      "split": "acceptance",
+      "layout_type": "bottom_right",
+      "error_type": "degraded_scan",
+      "status": "red",
+      "expected": "Dachgeschossausbau",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-c_sheet06_bottom_right.png",
+      "field_key": "index",
+      "split": "acceptance",
+      "layout_type": "bottom_right",
+      "error_type": "degraded_scan",
+      "status": "red",
+      "expected": "C",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-c_sheet06_bottom_right.png",
+      "field_key": "planverfasser",
+      "split": "acceptance",
+      "layout_type": "bottom_right",
+      "error_type": "degraded_scan",
+      "status": "red",
+      "expected": "Planwerk Keller und Partner",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-c_sheet06_bottom_right.png",
+      "field_key": "bauherr",
+      "split": "acceptance",
+      "layout_type": "bottom_right",
+      "error_type": "degraded_scan",
+      "status": "red",
+      "expected": "Nina Keller",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-c_sheet06_bottom_right.png",
+      "field_key": "grundstuecksadresse",
+      "split": "acceptance",
+      "layout_type": "bottom_right",
+      "error_type": "degraded_scan",
+      "status": "red",
+      "expected": "Rosenstrasse 19",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-d_sheet01_top.png",
+      "field_key": "bauvorhaben",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": null,
+      "status": "red",
+      "expected": "Neubau Einfamilienhaus",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-d_sheet01_top.png",
+      "field_key": "bauherr",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": null,
+      "status": "red",
+      "expected": "Stefan Wolf",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-d_sheet01_top.png",
+      "field_key": "grundstuecksadresse",
+      "split": "dev",
+      "layout_type": "top",
+      "error_type": null,
+      "status": "red",
+      "expected": "Musterweg 12",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden"
+    },
+    {
+      "filename": "obj-d_sheet03_rotated180.png",
+      "field_key": "massstab",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "red",
+      "expected": "1:200",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet03_rotated180.png",
+      "field_key": "datum",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "red",
+      "expected": "18.02.2026",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet03_rotated180.png",
+      "field_key": "gemeinde",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "red",
+      "expected": "Musterstadt",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet03_rotated180.png",
+      "field_key": "bauvorhaben",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "red",
+      "expected": "Neubau Einfamilienhaus",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet03_rotated180.png",
+      "field_key": "planverfasser",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "red",
+      "expected": "Architekturbuero Nord",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet03_rotated180.png",
+      "field_key": "bauherr",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "red",
+      "expected": "Stefan Wolf",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet03_rotated180.png",
+      "field_key": "grundstuecksadresse",
+      "split": "dev",
+      "layout_type": "rotated180",
+      "error_type": null,
+      "status": "red",
+      "expected": "Musterweg 12",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet04_rotated270.png",
+      "field_key": "flurstueck",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "red",
+      "expected": "245/3",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet04_rotated270.png",
+      "field_key": "massstab",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "red",
+      "expected": "1:100",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet04_rotated270.png",
+      "field_key": "datum",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "red",
+      "expected": "25.02.2026",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet04_rotated270.png",
+      "field_key": "gemeinde",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "red",
+      "expected": "Musterstadt",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet04_rotated270.png",
+      "field_key": "bauvorhaben",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "red",
+      "expected": "Neubau Einfamilienhaus",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet04_rotated270.png",
+      "field_key": "planverfasser",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "red",
+      "expected": "Architekturbuero Nord",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet04_rotated270.png",
+      "field_key": "bauherr",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "red",
+      "expected": "Stefan Wolf",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet04_rotated270.png",
+      "field_key": "grundstuecksadresse",
+      "split": "acceptance",
+      "layout_type": "rotated270",
+      "error_type": null,
+      "status": "red",
+      "expected": "Musterweg 12",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": true,
+      "likely_cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet"
+    },
+    {
+      "filename": "obj-d_sheet05_no_frame.png",
+      "field_key": "gemeinde",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "missing_date",
+      "status": "red",
+      "expected": "Musterstadt",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereichs-Erkennung findet keinen sicheren Kandidaten"
+    },
+    {
+      "filename": "obj-d_sheet05_no_frame.png",
+      "field_key": "bauvorhaben",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "missing_date",
+      "status": "red",
+      "expected": "Neubau Einfamilienhaus",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereichs-Erkennung findet keinen sicheren Kandidaten"
+    },
+    {
+      "filename": "obj-d_sheet05_no_frame.png",
+      "field_key": "grundstuecksadresse",
+      "split": "dev",
+      "layout_type": "no_frame",
+      "error_type": "missing_date",
+      "status": "red",
+      "expected": "Musterweg 12",
+      "extracted": null,
+      "candidates": [],
+      "rotation_mismatch": false,
+      "likely_cause": "Kein Rahmen/Raster - Bereichs-Erkennung findet keinen sicheren Kandidaten"
+    }
+  ],
+  "sample_check": {
+    "total_sampled": 1,
+    "wrong": 0,
+    "wrong_rate": 0.0,
+    "note": "Automatisiert anhand der Loesungsdatei ausgewertet (kein Mensch beteiligt) - fuer den echten Betrieb entscheidet stattdessen ein Mensch je Stichprobe."
+  },
+  "cross_document_consistency": [
+    {
+      "object_id": "OBJ-A",
+      "field_key": "flurstueck",
+      "values_found": [
+        {
+          "filename": "duplicate_of_obj-a_sheet02_right_strip.png",
+          "extracted": "118/2",
+          "expected": "118/2"
+        },
+        {
+          "filename": "obj-a_sheet01_bottom_right.png",
+          "extracted": "9207",
+          "expected": "118/2X"
+        },
+        {
+          "filename": "obj-a_sheet02_right_strip.png",
+          "extracted": "118/2",
+          "expected": "118/2"
+        },
+        {
+          "filename": "obj-a_sheet04_rotated90.png",
+          "extracted": "7",
+          "expected": "118/2"
+        },
+        {
+          "filename": "obj-a_sheet05_rotated180.png",
+          "extracted": "1",
+          "expected": "118/2"
+        },
+        {
+          "filename": "obj-a_sheet06_rotated270.png",
+          "extracted": "7",
+          "expected": "118/2"
+        },
+        {
+          "filename": "obj-a_sheet07_no_frame.png",
+          "extracted": "07",
+          "expected": "118/2"
+        },
+        {
+          "filename": "obj-a_sheet08_bottom_right.png",
+          "extracted": "7",
+          "expected": "118/2"
+        }
+      ]
+    },
+    {
+      "object_id": "OBJ-B",
+      "field_key": "flurstueck",
+      "values_found": [
+        {
+          "filename": "obj-b_sheet01_right_strip.png",
+          "extracted": null,
+          "expected": "340"
+        },
+        {
+          "filename": "obj-b_sheet03_rotated90.png",
+          "extracted": "340",
+          "expected": "340"
+        },
+        {
+          "filename": "obj-b_sheet04_rotated180.png",
+          "extracted": "4",
+          "expected": "340"
+        },
+        {
+          "filename": "obj-b_sheet05_rotated270.png",
+          "extracted": "4",
+          "expected": "340"
+        },
+        {
+          "filename": "obj-b_sheet06_no_frame.png",
+          "extracted": "340",
+          "expected": "340"
+        },
+        {
+          "filename": "obj-b_sheet07_bottom_right.png",
+          "extracted": "340",
+          "expected": "340"
+        },
+        {
+          "filename": "obj-b_sheet08_right_strip.png",
+          "extracted": "4",
+          "expected": "340"
+        }
+      ]
+    },
+    {
+      "object_id": "OBJ-C",
+      "field_key": "flurstueck",
+      "values_found": [
+        {
+          "filename": "obj-c_sheet02_rotated90.png",
+          "extracted": "76/5",
+          "expected": "76/5"
+        },
+        {
+          "filename": "obj-c_sheet03_no_frame.png",
+          "extracted": "76/5",
+          "expected": "76/5"
+        },
+        {
+          "filename": "obj-c_sheet04_rotated270.png",
+          "extracted": "19",
+          "expected": "76/5"
+        },
+        {
+          "filename": "obj-c_sheet05_no_frame.png",
+          "extracted": "19",
+          "expected": "76/5"
+        },
+        {
+          "filename": "obj-c_sheet06_bottom_right.png",
+          "extracted": null,
+          "expected": "76/5"
+        },
+        {
+          "filename": "obj-c_sheet07_right_strip.png",
+          "extracted": "76/5",
+          "expected": "76/5"
+        }
+      ]
+    },
+    {
+      "object_id": "OBJ-D",
+      "field_key": "flurstueck",
+      "values_found": [
+        {
+          "filename": "obj-d_sheet02_rotated90.png",
+          "extracted": "12",
+          "expected": "245/3X"
+        },
+        {
+          "filename": "obj-d_sheet03_rotated180.png",
+          "extracted": "002",
+          "expected": "245/3"
+        },
+        {
+          "filename": "obj-d_sheet04_rotated270.png",
+          "extracted": null,
+          "expected": "245/3"
+        },
+        {
+          "filename": "obj-d_sheet05_no_frame.png",
+          "extracted": "245/3",
+          "expected": "245/3"
+        },
+        {
+          "filename": "obj-d_sheet06_bottom_right.png",
+          "extracted": "12",
+          "expected": "245/3"
+        },
+        {
+          "filename": "obj-d_sheet07_right_strip.png",
+          "extracted": "245/3",
+          "expected": "245/3"
+        }
+      ]
+    }
+  ],
+  "top_causes": [
+    {
+      "cause": "Rotationserkennung lag falsch - Seite wurde auf dem Kopf/seitlich verarbeitet",
+      "count": 60
+    },
+    {
+      "cause": "Nachbarzeile/-zelle verschmolzen - Beschriftung eines anderen Feldes uebernommen",
+      "count": 41
+    },
+    {
+      "cause": "Keine passende Beschriftung oder Formatspur im gewaehlten Bereich gefunden",
+      "count": 33
+    }
+  ]
+}
