@@ -12,7 +12,10 @@ import json
 import random
 from pathlib import Path
 
+import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from reportlab.lib.pagesizes import A1, landscape
+from reportlab.pdfgen import canvas as pdf_canvas
 
 OUT_DIR = Path(__file__).resolve().parent.parent.parent.parent / "testdata" / "titleblocks_full"
 FONTS_DIR = Path(__file__).resolve().parent / "fonts"
@@ -211,6 +214,74 @@ def _ground_truth_fields(fields_dict, order, omit=None):
     return {k: v for k, v in fields_dict.items() if k in order and k not in omit and v is not None}
 
 
+# ---------- Erweiterte Testabdeckung: Textebene, Scan-Stoerungen, A1 ----------
+
+
+def _generate_textlayer_pdf(fields: dict, out_path: Path) -> list[str]:
+    """Erzeugt ein ECHTES PDF mit auswaehlbarer Textebene (keine
+    gerasterten Buchstaben) ueber reportlab - testet, ob die Pipeline auch
+    mit einem Vektor-PDF statt einem gescannten Bild zurechtkommt."""
+    page_w, page_h = 1600, 1131  # Punkte, grob proportional zu unseren Bildseiten
+    c = pdf_canvas.Canvas(str(out_path), pagesize=(page_w, page_h))
+    c.setLineWidth(2)
+    c.rect(20, page_h - 20 - (page_h - 40), page_w - 40, page_h - 40)  # Seitenrand
+
+    order = [k for k in FIELD_ORDER if k in fields]
+    box_w, box_h = 540, 340
+    x0, y0 = page_w - box_w - 20, 20  # unten rechts (PDF-Koordinaten: y waechst nach oben)
+    c.rect(x0, y0, box_w, box_h)
+    row_h = box_h / len(order)
+    col_x = x0 + box_w * 0.33
+    c.line(col_x, y0, col_x, y0 + box_h)
+    c.setFont("Helvetica", 12)
+    for i, key in enumerate(order):
+        row_top = y0 + box_h - i * row_h
+        if i > 0:
+            c.line(x0, row_top, x0 + box_w, row_top)
+        c.drawString(x0 + 8, row_top - 20, LABEL_TEXT.get(key, key))
+        value = fields.get(key)
+        if value is not None:
+            c.drawString(col_x + 8, row_top - 20, str(value))
+    c.showPage()
+    c.save()
+    return order
+
+
+def _add_scan_noise(img: Image.Image, rng: random.Random, amount: float = 18.0) -> Image.Image:
+    """Simuliert Bildrauschen eines einfachen Scanners/Faxgeraets."""
+    arr = np.array(img.convert("RGB")).astype(np.int16)
+    noise = (rng.random() * amount) * np.random.default_rng(rng.randint(0, 2**31 - 1)).standard_normal(arr.shape)
+    noisy = np.clip(arr + noise, 0, 255).astype(np.uint8)
+    return Image.fromarray(noisy)
+
+
+def _add_jpeg_artifacts(img: Image.Image, path_hint: Path, quality: int = 18) -> Image.Image:
+    """Simuliert verlustbehaftete Kompression (z.B. ein Scan, der als
+    niedrig-qualitatives JPEG abgespeichert und wieder eingescannt wurde)."""
+    tmp_path = path_hint.with_suffix(".tmp.jpg")
+    img.convert("RGB").save(tmp_path, format="JPEG", quality=quality)
+    degraded = Image.open(tmp_path).convert("RGB")
+    degraded.load()
+    tmp_path.unlink(missing_ok=True)
+    return degraded
+
+
+def _plan_a1_format(fields: dict, font_name: str = "dejavu") -> tuple[Image.Image, list[str]]:
+    """Ein Plan im A1-Format (deutlich groesser als die uebrigen A4-
+    Testplaene) - prueft, ob Stufe A/B auch bei sehr grossen Seiten
+    zuverlaessig arbeiten."""
+    a1_size = (int(PAGE_SIZE[0] * 2.83), int(PAGE_SIZE[1] * 2.83))
+    img = Image.new("RGB", a1_size, "white")
+    draw = ImageDraw.Draw(img)
+    draw.rectangle([40, 40, a1_size[0] - 40, a1_size[1] - 40], outline="black", width=4)
+
+    order = [k for k in FIELD_ORDER if k in fields]
+    box = (a1_size[0] - 1500, a1_size[1] - 900, a1_size[0] - 60, a1_size[1] - 60)
+    font = _font(font_name, 40)
+    _draw_two_col_custom(draw, box, order, fields, LABEL_TEXT, font, lambda _k: font)
+    return img, order
+
+
 def generate_all() -> dict:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     solutions = {}
@@ -320,6 +391,64 @@ def generate_all() -> dict:
         }
         total_count += 1
 
+    # ---- Erweiterte Testabdeckung: Textebene, Scan-Stoerungen, A1-Format ----
+    rng = random.Random(RNG.random())
+
+    textlayer_fields = dict(OBJECTS[0])
+    textlayer_object_id = textlayer_fields.pop("object_id")
+    textlayer_fields.update(
+        plannummer=f"{textlayer_object_id}-TXT", planinhalt="Lageplan", datum=DATES[0],
+        massstab=SCALES[0], index="A",
+    )
+    textlayer_filename = "textlayer_plan.pdf"
+    drawn = _generate_textlayer_pdf(textlayer_fields, OUT_DIR / textlayer_filename)
+    solutions[textlayer_filename] = {
+        "template_id": "textlayer", "layout_type": "textlayer", "object_id": textlayer_object_id,
+        "error_type": None, "notes": "Echtes PDF mit Textebene (reportlab), kein gerastertes Bild.",
+        "fields": _ground_truth_fields(textlayer_fields, drawn, set()),
+    }
+    total_count += 1
+
+    for noise_kind in ("scan_noise", "scan_jpeg"):
+        obj = OBJECTS[1]
+        fields = dict(obj)
+        object_id = fields.pop("object_id")
+        fields.update(plannummer=f"{object_id}-{noise_kind}", planinhalt="Grundriss EG",
+                       datum=DATES[1], massstab=SCALES[0], index="B")
+        img, draw = _new_page()
+        draw.rectangle([20, 20, PAGE_SIZE[0] - 20, PAGE_SIZE[1] - 20], outline="black", width=2)
+        drawn_keys = _render_titleblock(img, draw, "bottom_right", fields, "dejavu")
+        if noise_kind == "scan_noise":
+            img = _add_scan_noise(img, rng)
+            note = "Simuliertes Scanner-Bildrauschen (zusaetzlich zur bisherigen Schiefstand/Unschaerfe-Variante)."
+        else:
+            filename_hint = OUT_DIR / f"{object_id.lower()}_{noise_kind}.png"
+            img = _add_jpeg_artifacts(img, filename_hint)
+            note = "Simulierte verlustbehaftete JPEG-Kompression."
+        filename = f"{object_id.lower()}_{noise_kind}.png"
+        img.save(OUT_DIR / filename)
+        solutions[filename] = {
+            "template_id": f"{object_id}_{noise_kind}", "layout_type": "bottom_right", "object_id": object_id,
+            "error_type": noise_kind, "notes": note,
+            "fields": _ground_truth_fields(fields, drawn_keys, set()),
+        }
+        total_count += 1
+        error_count += 1
+
+    a1_fields = dict(OBJECTS[2])
+    a1_object_id = a1_fields.pop("object_id")
+    a1_fields.update(plannummer=f"{a1_object_id}-A1", planinhalt="Lageplan", datum=DATES[2],
+                      massstab=SCALES[2], index="A")
+    a1_img, a1_drawn = _plan_a1_format(a1_fields)
+    a1_filename = "a1_format_plan.png"
+    a1_img.save(OUT_DIR / a1_filename)
+    solutions[a1_filename] = {
+        "template_id": "a1_format", "layout_type": "a1_format", "object_id": a1_object_id,
+        "error_type": None, "notes": "Plan im A1-Format (deutlich groesser als die uebrigen A4-Testplaene).",
+        "fields": _ground_truth_fields(a1_fields, a1_drawn, set()),
+    }
+    total_count += 1
+
     # ---- doppelt vorhandener Plan: eine bestehende, fehlerfreie Datei real duplizieren ----
     clean_items = [fn for fn, meta in solutions.items() if meta["error_type"] is None]
     if clean_items:
@@ -354,5 +483,85 @@ def generate_all() -> dict:
     return solutions
 
 
+# ---------- Frische, unabhaengige Abnahmegruppe (neuer Zufallswert) ----------
+# Komplett eigene Objekte und ein ANDERER Seed als oben - diese Gruppe wurde
+# nicht angeschaut, bevor die Runde-2-Korrekturen geschrieben wurden, und
+# dient als unabhaengige Gegenprobe gegen ein Zuschneiden auf die
+# urspruenglichen 31 Testplaene.
+
+FRESH_OUT_DIR = Path(__file__).resolve().parent.parent.parent.parent / "testdata" / "titleblocks_fresh_acceptance"
+FRESH_SEED = 7788113  # bewusst ein anderer Wert als RNG oben (20261016)
+
+FRESH_OBJECTS = [
+    {
+        "object_id": "OBJ-E",
+        "bauherr": "Claudia Brunner", "planverfasser": "Atelier Brunner Bau",
+        "bauvorhaben": "Carport mit Abstellraum", "grundstuecksadresse": "Talstrasse 23",
+        "gemeinde": "Felsbach", "flurstueck": "502/1",
+    },
+    {
+        "object_id": "OBJ-F",
+        "bauherr": "Markus Fink", "planverfasser": "Fink + Weber Architekten",
+        "bauvorhaben": "Erweiterung Werkstatt", "grundstuecksadresse": "Industrieweg 9",
+        "gemeinde": "Hochried", "flurstueck": "17",
+    },
+]
+
+
+def generate_fresh_acceptance() -> dict:
+    FRESH_OUT_DIR.mkdir(parents=True, exist_ok=True)
+    fresh_rng = random.Random(FRESH_SEED)
+    solutions = {}
+
+    layouts_cycle = ["bottom_right", "right_strip", "top", "rotated90", "rotated180", "no_frame"]
+    error_cycle = [None, None, "missing_date", None, "decoy_text", None]
+
+    for obj in FRESH_OBJECTS:
+        fields_base = dict(obj)
+        object_id = fields_base.pop("object_id")
+        for sheet_idx in range(6):
+            layout = layouts_cycle[sheet_idx % len(layouts_cycle)]
+            error_type = error_cycle[sheet_idx % len(error_cycle)]
+            font_name = FONT_CYCLE[fresh_rng.randrange(len(FONT_CYCLE))]
+
+            fields = dict(fields_base)
+            fields["plannummer"] = f"{object_id}-{sheet_idx + 1:02d}"
+            fields["planinhalt"] = SHEET_CONTENTS[sheet_idx % len(SHEET_CONTENTS)]
+            fields["datum"] = DATES[sheet_idx % len(DATES)]
+            fields["massstab"] = SCALES[sheet_idx % len(SCALES)]
+            fields["index"] = INDEXES[sheet_idx % len(INDEXES)]
+
+            omit = set()
+            notes = ""
+            if error_type == "missing_date":
+                fields["datum"] = None
+                omit.add("datum")
+                notes = "Plandatum fehlt (absichtlich)."
+
+            img, draw = _new_page()
+            draw.rectangle([20, 20, PAGE_SIZE[0] - 20, PAGE_SIZE[1] - 20], outline="black", width=2)
+            drawn_keys = _render_titleblock(img, draw, layout, fields, font_name)
+            if error_type == "decoy_text":
+                _add_decoy_text(draw, with_date=True)
+                notes = "Taeuschungstext ausserhalb des Titelblocks (absichtlich)."
+            img = _apply_rotation(img, layout)
+
+            filename = f"{object_id.lower()}_sheet{sheet_idx + 1:02d}_{layout}.png"
+            img.save(FRESH_OUT_DIR / filename)
+            solutions[filename] = {
+                "template_id": f"{object_id}_{layout}_{font_name}", "layout_type": layout,
+                "object_id": object_id, "error_type": error_type, "notes": notes,
+                "fields": _ground_truth_fields(fields, drawn_keys, omit),
+                "split": "acceptance",  # komplette Gruppe ist Abnahme - nie zum Nachbessern verwendet
+            }
+
+    with (FRESH_OUT_DIR / "loesungen.json").open("w", encoding="utf-8") as f:
+        json.dump(solutions, f, ensure_ascii=False, indent=2)
+
+    print(f"{len(solutions)} frische Abnahme-Testplaene erzeugt in {FRESH_OUT_DIR} (Seed {FRESH_SEED})")
+    return solutions
+
+
 if __name__ == "__main__":
     generate_all()
+    generate_fresh_acceptance()

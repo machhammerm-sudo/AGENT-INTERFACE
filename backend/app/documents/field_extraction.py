@@ -21,6 +21,14 @@ ROW_OVERLAP_MIN = 0.4  # Anteil ueberlappender Hoehe, um "gleiche Zeile" ueber S
 GREEN_THRESHOLD = 0.72
 GREEN_MARGIN = 0.78  # zweiter Kandidat muss unter top*margin bleiben, sonst nur gelb
 GREEN_OCR_MIN = 70.0  # auch eine eindeutige Zuordnung bleibt gelb, wenn das OCR-Lesen selbst unsicher war
+GREEN_MIN_WORD_OCR = 55.0  # UND das schwaechste Wort im Wert darf nicht zu unsicher gelesen sein
+GREEN_MAX_CHARS = 50  # auffaellig lange Werte (oft verschmolzene Nachbarzellen) nie gruen
+GREEN_MAX_WORDS = 6
+
+# Format-Muster, die distinktiv genug sind, um als "fremdes Formatmuster"
+# in einem ANDEREN Feld zu gelten (Plannummer/Index/Flurstueck sind zu
+# generisch - fast jede Zahl wuerde faelschlich als Kontamination gelten).
+DISTINCTIVE_FORMAT_FIELDS = {"datum", "massstab", "flaeche"}
 
 
 @dataclass
@@ -81,6 +89,11 @@ class Line:
         confs = [w.conf for w in self.words if w.conf >= 0]
         return sum(confs) / len(confs) if confs else 0.0
 
+    @property
+    def min_conf(self) -> float:
+        confs = [w.conf for w in self.words if w.conf >= 0]
+        return min(confs) if confs else 0.0
+
 
 @dataclass
 class FieldCandidate:
@@ -90,6 +103,7 @@ class FieldCandidate:
     match_type: str  # "same_line" | "below" | "right_of_label_row" | "format"
     label_score: float
     rel_bbox: tuple[float, float, float, float]
+    min_word_confidence: float = 0.0
 
 
 @dataclass
@@ -124,25 +138,38 @@ def _extract_words(image: Image.Image) -> list[Word]:
     return words
 
 
+ROW_TOLERANCE_FACTOR = 0.4  # Anteil der (globalen) Text-Mittelhoehe, der eine Zeile definiert
+
+
 def _group_lines(words: list[Word]) -> list[Line]:
     """Gruppiert Woerter geometrisch zu Zeilen UND Zellen (nicht ueber
     Tesseracts eigene block/par/line-Kennung, die bei engen Rastern Spalten
     gerne zu einer einzigen 'Zeile' zusammenwirft). Erst nach Zeilenhoehe
     clustern, dann innerhalb der Zeile an groesseren Luecken in Zellen
     auftrennen - genau diese Luecken trennen i.d.R. Beschriftungs- von
-    Wertspalte in einem Titelblock-Raster."""
+    Wertspalte in einem Titelblock-Raster.
+
+    Die Zeilen-Zuordnung arbeitet ueber den vertikalen MITTELPUNKT jedes
+    Wortes gegen den LAUFENDEN MITTELWERT der Zeile (statt wachsender
+    Min/Max-Grenzen, die bei eng stehenden Zeilen schnell ineinanderlaufen
+    koennen) und nutzt eine feste, aus der globalen Median-Texthoehe
+    abgeleitete Toleranz - das bleibt robust, auch wenn ein einzelnes Wort
+    zufaellig hoeher oder tiefer sitzt."""
     if not words:
         return []
 
-    ordered = sorted(words, key=lambda w: w.top)
+    heights = sorted(w.height for w in words)
+    median_height = heights[len(heights) // 2]
+    tolerance = max(median_height * ROW_TOLERANCE_FACTOR, 4)
+
+    ordered = sorted(words, key=lambda w: (w.top + w.bottom) / 2)
     rows: list[list[Word]] = []
     for w in ordered:
+        w_center = (w.top + w.bottom) / 2
         placed = False
         for row in rows:
-            row_top = min(r.top for r in row)
-            row_bottom = max(r.bottom for r in row)
-            tolerance = max(r.height for r in row) * 0.5
-            if w.top < row_bottom + tolerance and w.bottom > row_top - tolerance:
+            row_center = sum((r.top + r.bottom) / 2 for r in row) / len(row)
+            if abs(w_center - row_center) <= tolerance:
                 row.append(w)
                 placed = True
                 break
@@ -216,6 +243,7 @@ def _format_candidates(
                     match_type="format",
                     label_score=0.0,
                     rel_bbox=_rel_bbox(line, image_size),
+                    min_word_confidence=line.min_conf,
                 )
             )
     return candidates
@@ -233,14 +261,76 @@ def _dedupe_keep_best(candidates: list[FieldCandidate]) -> list[FieldCandidate]:
     return sorted(best_by_value.values(), key=lambda c: c.assignment_confidence, reverse=True)
 
 
-def status_from_candidates(candidates: list[FieldCandidate]) -> str:
+def _contains_foreign_signal(value: str, own_field_key: str, all_specs: list["FieldSpec"]) -> bool:
+    """True, wenn der Wert eine Beschriftung oder ein distinktives
+    Formatmuster eines ANDEREN Feldes enthaelt - ein starkes Indiz fuer
+    eine verschmolzene Nachbarzeile/-zelle, die nie gruen werden soll."""
+    value_norm = value.strip()
+    if not value_norm:
+        return False
+
+    for spec in all_specs:
+        if spec.field_key == own_field_key:
+            continue
+        for syn in spec.synonyms:
+            if len(syn) < 4:
+                continue
+            if re.search(r"\b" + re.escape(syn) + r"\b", value_norm, re.IGNORECASE):
+                return True
+        if spec.field_key in DISTINCTIVE_FORMAT_FIELDS and spec.format_regex:
+            try:
+                if re.search(spec.format_regex, value_norm, re.IGNORECASE):
+                    return True
+            except re.error:
+                pass
+    return False
+
+
+def _looks_too_long(value: str) -> bool:
+    return len(value) > GREEN_MAX_CHARS or len(value.split()) > GREEN_MAX_WORDS
+
+
+EDGE_TRUNCATION_MARGIN = 0.02  # Kandidat, dessen Box bis auf 2% an den Ausschnittsrand reicht, gilt als moeglich abgeschnitten
+
+
+def _touches_crop_edge(rel_bbox: tuple[float, float, float, float], margin: float = EDGE_TRUNCATION_MARGIN) -> bool:
+    """True, wenn die Kandidaten-Box bis an den Rand des Titelblock-
+    Ausschnitts reicht - ein starkes, geometrisches Indiz dafuer, dass der
+    Wert dort abgeschnitten wurde (der Text haette eigentlich weitergehen
+    koennen). OCR kann so einen abgeschnittenen Rest trotzdem mit hoher
+    Sicherheit (falsch) lesen, deshalb reicht die OCR-Sicherheit allein
+    nicht als Schutz."""
+    x, y, w, h = rel_bbox
+    return x <= margin or y <= margin or (x + w) >= 1 - margin or (y + h) >= 1 - margin
+
+
+def status_from_candidates(
+    candidates: list[FieldCandidate],
+    has_frame: bool = True,
+    own_field_key: str | None = None,
+    all_specs: list["FieldSpec"] | None = None,
+) -> str:
     if not candidates:
         return "red"
     top = candidates[0]
-    # Gruen braucht BEIDES: eine eindeutige Zuordnung UND eine sichere
-    # OCR-Lesung - eine klare Zuordnung rettet nichts, wenn Tesseract sich
-    # beim eigentlichen Zeichen-Lesen selbst schon unsicher war.
-    if top.assignment_confidence >= GREEN_THRESHOLD and top.ocr_confidence >= GREEN_OCR_MIN:
+
+    # Ohne Rahmen/Raster ist die Bereichs- und Zellenabgrenzung grundsaetzlich
+    # unsicherer (siehe Pruefstand P28) - ein solches Feld wird nie gruen,
+    # auch nicht bei hoher Zuordnungssicherheit.
+    if not has_frame:
+        return "yellow"
+
+    # Gruen braucht: eindeutige Zuordnung, sichere OCR-Lesung IM MITTEL,
+    # sicheres schwaechstes Wort, ein plausibel kurzer Wert, und keine
+    # erkennbare Verunreinigung durch ein fremdes Feld.
+    if (
+        top.assignment_confidence >= GREEN_THRESHOLD
+        and top.ocr_confidence >= GREEN_OCR_MIN
+        and top.min_word_confidence >= GREEN_MIN_WORD_OCR
+        and not _looks_too_long(top.value)
+        and not _touches_crop_edge(top.rel_bbox)
+        and (all_specs is None or own_field_key is None or not _contains_foreign_signal(top.value, own_field_key, all_specs))
+    ):
         if len(candidates) == 1 or candidates[1].assignment_confidence < top.assignment_confidence * GREEN_MARGIN:
             return "green"
     return "yellow"
@@ -253,7 +343,9 @@ def _looks_like_a_label(text: str, all_synonyms: list[str]) -> bool:
     return any(fuzz.ratio(text.lower().rstrip(":."), syn.lower()) >= LABEL_MATCH_THRESHOLD for syn in all_synonyms)
 
 
-def extract_fields(region_image: Image.Image, fields: list[FieldSpec]) -> list[FieldExtractionResult]:
+def extract_fields(
+    region_image: Image.Image, fields: list[FieldSpec], has_frame: bool = True
+) -> list[FieldExtractionResult]:
     words = _extract_words(region_image)
     lines = _group_lines(words)
     image_size = region_image.size
@@ -271,9 +363,9 @@ def extract_fields(region_image: Image.Image, fields: list[FieldSpec]) -> list[F
             remainder_words = line.words[window_count:]
             if remainder_words:
                 value = " ".join(w.text for w in remainder_words)
-                conf = sum(w.conf for w in remainder_words if w.conf >= 0) / max(
-                    1, len([w for w in remainder_words if w.conf >= 0])
-                )
+                remainder_confs = [w.conf for w in remainder_words if w.conf >= 0]
+                conf = sum(remainder_confs) / len(remainder_confs) if remainder_confs else 0.0
+                min_conf = min(remainder_confs) if remainder_confs else 0.0
                 candidates.append(
                     FieldCandidate(
                         value=value,
@@ -288,6 +380,7 @@ def extract_fields(region_image: Image.Image, fields: list[FieldSpec]) -> list[F
                             })(),
                             image_size,
                         ),
+                        min_word_confidence=min_conf,
                     )
                 )
 
@@ -306,6 +399,7 @@ def extract_fields(region_image: Image.Image, fields: list[FieldSpec]) -> list[F
                             match_type="right_of_label_row",
                             label_score=label_score,
                             rel_bbox=_rel_bbox(other, image_size),
+                            min_word_confidence=other.min_conf,
                         )
                     )
 
@@ -329,6 +423,7 @@ def extract_fields(region_image: Image.Image, fields: list[FieldSpec]) -> list[F
                         match_type="below",
                         label_score=label_score,
                         rel_bbox=_rel_bbox(below, image_size),
+                        min_word_confidence=below.min_conf,
                     )
                 )
 
@@ -336,7 +431,7 @@ def extract_fields(region_image: Image.Image, fields: list[FieldSpec]) -> list[F
             candidates.extend(_format_candidates(lines, spec.format_regex, image_size))
 
         deduped = _dedupe_keep_best(candidates)[:3]
-        status = status_from_candidates(deduped)
+        status = status_from_candidates(deduped, has_frame, spec.field_key, fields)
         results.append(FieldExtractionResult(field_key=spec.field_key, status=status, candidates=deduped))
 
     return results

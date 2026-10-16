@@ -21,6 +21,7 @@ ROTATIONS = (0, 90, 180, 270)
 GRID_CELLS = 24  # Seite wird in ein 24x24-Raster fuer die Dichte-Analyse geteilt
 CORNER_BONUS_WEIGHT = 0.08  # bewusst klein - nur ein schwacher Bonus, keine Bedingung
 MERGE_IOU_THRESHOLD = 0.35
+MIN_FRAME_LINES = 3  # ab wie vielen achsparallelen Linien IM AUSSCHNITT ein Rahmen/Raster gilt
 
 
 @dataclass
@@ -34,27 +35,41 @@ class RegionCandidate:
     details: dict = field(default_factory=dict)
 
 
-def detect_rotation(image: Image.Image) -> int:
-    """Gibt 0/90/180/270 zurueck. Versucht zuerst Tesseracts
-    Orientierungserkennung (OSD); schlaegt das fehl (z.B. zu wenig Text auf
-    der Seite), wird ersatzweise bei jeder der vier Drehungen grob OCR
-    gelesen und die mit der hoechsten Text-Erkennungsguete gewaehlt."""
+OSD_CONFIDENCE_MIN = 1.0  # unterhalb davon gilt Tesseracts eigene Rotationsangabe als nicht vertrauenswuerdig
+
+
+def detect_rotation(image: Image.Image, label_synonyms: list[str] | None = None) -> int:
+    """Gibt 0/90/180/270 zurueck. Nutzt Tesseracts Orientierungserkennung
+    (OSD) NUR, wenn deren eigene Sicherheit (orientation confidence)
+    ausreichend hoch ist - sonst wird die OSD-Angabe verworfen (sie kann bei
+    wenig/schwachem Text eine falsche Drehung mit sehr niedriger Sicherheit
+    liefern, ohne dabei einen Fehler auszuloesen). Ersatzweise werden alle
+    vier Drehungen ausprobiert und die mit den meisten gefundenen
+    Feld-Beschriftungen gewaehlt - das ist ein staerkeres Signal als reine
+    Text-Dichte, weil es direkt misst, ob die Seite in dieser Drehung
+    tatsaechlich lesbare Titelblock-Beschriftungen zeigt."""
     try:
         osd = pytesseract.image_to_osd(image, config="--psm 0")
+        angle, confidence = None, 0.0
         for line in osd.splitlines():
-            if line.lower().startswith("rotate:"):
-                angle = int(line.split(":")[1].strip())
-                # Tesseract gibt den Winkel an, um den im Uhrzeigersinn
-                # gedreht werden muesste, um die Seite aufzurichten.
-                return angle % 360
+            low = line.lower()
+            if low.startswith("rotate:"):
+                angle = int(line.split(":")[1].strip()) % 360
+            elif low.startswith("orientation confidence:"):
+                confidence = float(line.split(":")[1].strip())
+        if angle is not None and confidence >= OSD_CONFIDENCE_MIN:
+            return angle
     except pytesseract.TesseractError:
         pass
 
-    return _detect_rotation_by_text_density(image)
+    return _detect_rotation_by_label_count(image, label_synonyms or [])
 
 
-def _detect_rotation_by_text_density(image: Image.Image) -> int:
-    # kleine Vorschau genuegt und haelt diesen Fallback schnell
+def _detect_rotation_by_label_count(image: Image.Image, label_synonyms: list[str]) -> int:
+    """Probiert alle vier Drehungen und zaehlt, in wie vielen davon bekannte
+    Feld-Beschriftungen (unscharf) gefunden werden - die Drehung mit den
+    meisten Treffern gewinnt. Ohne Synonym-Liste (z.B. in isolierten Tests)
+    faellt dies auf eine reine Text-Erkennungsguete zurueck."""
     preview = image.copy()
     preview.thumbnail((1000, 1000))
 
@@ -68,11 +83,22 @@ def _detect_rotation_by_text_density(image: Image.Image) -> int:
             )
         except pytesseract.TesseractError:
             continue
-        score = 0.0
-        for text, conf in zip(data["text"], data["conf"]):
-            conf = float(conf)
-            if len(text.strip()) >= 3 and conf > 0:
-                score += conf
+
+        if label_synonyms:
+            score = 0.0
+            for text in data["text"]:
+                text = text.strip()
+                if len(text) < 3:
+                    continue
+                best_match = max((fuzz.partial_ratio(text.lower(), s.lower()) for s in label_synonyms), default=0)
+                if best_match >= 80:
+                    score += 1
+        else:
+            score = sum(
+                float(conf) for text, conf in zip(data["text"], data["conf"])
+                if len(text.strip()) >= 3 and float(conf) > 0
+            )
+
         if score > best_score:
             best_score, best_rotation = score, rotation
     return best_rotation
@@ -325,3 +351,83 @@ def find_titleblock_candidates(
 
     all_candidates.sort(key=lambda c: c.score, reverse=True)
     return all_candidates[:max_candidates]
+
+
+def _cluster_positions(positions: list[float], tolerance: float = 15.0) -> list[float]:
+    """Fasst nahe beieinanderliegende Positionen zu je einer Linie zusammen
+    (Hough liefert fuer eine einzelne dicke/leicht schraege Kante gerne
+    mehrere fast deckungsgleiche Segmente) und gibt die DISTINKTEN
+    Positionen (Clustermittel) zurueck."""
+    if not positions:
+        return []
+    positions = sorted(positions)
+    clusters = [[positions[0]]]
+    for p in positions[1:]:
+        if p - clusters[-1][-1] <= tolerance:
+            clusters[-1].append(p)
+        else:
+            clusters.append([p])
+    return [sum(c) / len(c) for c in clusters]
+
+
+def _longest_uniform_run(positions: list[float], tolerance_ratio: float = 0.2) -> int:
+    """Laenge (in Punkten) der laengsten Folge annaehernd GLEICHMAESSIG
+    beabstandeter Positionen - ein echtes Zeilenraster hat viele Zeilen mit
+    fast identischem Abstand, verstreute unverwandte Linien (Seitenrand,
+    ein Stempel-Rechteck) haben dagegen unregelmaessige Abstaende."""
+    if len(positions) < 2:
+        return len(positions)
+    positions = sorted(positions)
+    gaps = [positions[i + 1] - positions[i] for i in range(len(positions) - 1)]
+    best_run, current_run = 1, 1
+    for i in range(1, len(gaps)):
+        if gaps[i - 1] > 0 and abs(gaps[i] - gaps[i - 1]) <= tolerance_ratio * gaps[i - 1]:
+            current_run += 1
+        else:
+            current_run = 1
+        best_run = max(best_run, current_run)
+    return best_run + 1
+
+
+def has_grid_frame(crop_image: Image.Image, min_lines: int = MIN_FRAME_LINES) -> bool:
+    """Direkte, lokale Pruefung auf dem fertigen Titelblock-Ausschnitt
+    selbst: enthaelt ER (nicht die ganze Seite) ein echtes Zeilen- oder
+    Spaltenraster? Bewusst getrennt von der Kandidaten-Bewertung in
+    find_titleblock_candidates(), deren 'method' nur eine grobe Gewichtung
+    fuer die BEREICHS-WAHL ist und durch Zusammenfuehrung mit unverwandten
+    Linien (z.B. einer zufaellig mit im Ausschnitt liegenden Seitenecke)
+    verfaelscht sein kann. Verlangt DISTINKTE, geclusterte Linien in
+    mindestens einer Richtung (horizontal ODER vertikal) - eine einzelne
+    Seitenecke oder ein zufaelliges Text-Artefakt liefert nur 1-2 Linien je
+    Richtung, ein echtes Titelblock-Raster mit mehreren Zeilen deutlich
+    mehr. Diese Funktion entscheidet direkt ueber die 'nie gruen ohne
+    Rahmen'-Regel und muss deshalb robust sein."""
+    gray = cv2.cvtColor(np.array(crop_image.convert("RGB")), cv2.COLOR_RGB2GRAY)
+    h, w = gray.shape
+    edges = cv2.Canny(gray, 50, 150, apertureSize=3)
+    lines = cv2.HoughLinesP(
+        edges, 1, np.pi / 180, threshold=60, minLineLength=min(w, h) // 4, maxLineGap=8
+    )
+    if lines is None:
+        return False
+
+    horizontal_positions, vertical_positions = [], []
+    for line in lines[:, 0]:
+        x1, y1, x2, y2 = line
+        angle = abs(np.degrees(np.arctan2(y2 - y1, x2 - x1)))
+        if angle < 10 or angle > 170:
+            horizontal_positions.append((y1 + y2) / 2)
+        elif 80 < angle < 100:
+            vertical_positions.append((x1 + x2) / 2)
+
+    distinct_horizontal = _cluster_positions(horizontal_positions)
+    distinct_vertical = _cluster_positions(vertical_positions)
+
+    # Nicht nur die Anzahl zaehlt - verstreute, unverwandte Linien (z.B. eine
+    # zufaellig mit im Ausschnitt liegende Seitenecke plus ein Stempel-
+    # Rechteck) haben unregelmaessige Abstaende. Ein echtes Raster hat eine
+    # lange Folge GLEICHMAESSIG beabstandeter Zeilen/Spalten.
+    best_uniform_run = max(
+        _longest_uniform_run(distinct_horizontal), _longest_uniform_run(distinct_vertical)
+    )
+    return best_uniform_run >= min_lines

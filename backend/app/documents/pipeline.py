@@ -22,7 +22,7 @@ from .models import (
     MetricOutcome,
     TitleblockDocument,
 )
-from .region_detection import detect_rotation, find_titleblock_candidates, _rotate
+from .region_detection import detect_rotation, find_titleblock_candidates, has_grid_frame, _rotate
 from .rendering import render_page
 
 LOW_DPI = 150
@@ -115,7 +115,7 @@ def _run_pipeline(db: Session, document: TitleblockDocument) -> None:
     all_synonyms = [s for f in field_specs for s in f.synonyms]
 
     low_res = render_page(document.stored_path, dpi=LOW_DPI)
-    rotation = detect_rotation(low_res.image)
+    rotation = detect_rotation(low_res.image, all_synonyms)
     upright_low = _rotate(low_res.image, rotation)
 
     candidates = find_titleblock_candidates(upright_low, all_synonyms)
@@ -145,7 +145,8 @@ def _run_pipeline(db: Session, document: TitleblockDocument) -> None:
     )
     region_crop = upright_high.crop(box)
 
-    results = extract_fields(region_crop, field_specs)
+    has_frame = has_grid_frame(region_crop)
+    results = extract_fields(region_crop, field_specs, has_frame)
     results_by_key = {r.field_key: r for r in results}
 
     # --- Gedaechtnis pro Kunde ---
@@ -177,7 +178,7 @@ def _run_pipeline(db: Session, document: TitleblockDocument) -> None:
                 result.candidates.insert(0, mem_candidate)
             result.candidates.sort(key=lambda c: c.assignment_confidence, reverse=True)
             result.candidates = result.candidates[:3]
-            result.status = status_from_candidates(result.candidates)
+            result.status = status_from_candidates(result.candidates, has_frame, spec.field_key, field_specs)
 
     # --- Eskalation (P16) nur lokal-unsicher UND Schalter aktiv ---
     privacy = None

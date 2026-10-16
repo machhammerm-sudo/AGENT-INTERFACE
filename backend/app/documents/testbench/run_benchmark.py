@@ -15,7 +15,7 @@ from PIL import Image
 from rapidfuzz import fuzz
 
 from ..field_extraction import FieldSpec, extract_fields
-from ..region_detection import detect_rotation, find_titleblock_candidates, _rotate
+from ..region_detection import detect_rotation, find_titleblock_candidates, has_grid_frame, _rotate
 from ..seed import DEFAULT_FIELDS
 
 PLANS_DIR = Path(__file__).resolve().parent.parent.parent.parent / "testdata" / "titleblocks"
@@ -57,7 +57,7 @@ def run_benchmark(plans_dir: Path = PLANS_DIR) -> dict:
         ground_truth = meta["fields"]
 
         image = Image.open(plans_dir / filename).convert("RGB")
-        rotation = detect_rotation(image)
+        rotation = detect_rotation(image, all_synonyms)
         upright = _rotate(image, rotation)
 
         candidates = find_titleblock_candidates(upright, all_synonyms)
@@ -69,7 +69,8 @@ def run_benchmark(plans_dir: Path = PLANS_DIR) -> dict:
         )
         crop = upright.crop(box)
 
-        results = extract_fields(crop, field_specs)
+        has_frame = has_grid_frame(crop)
+        results = extract_fields(crop, field_specs, has_frame)
 
         for result in results:
             expected = ground_truth.get(result.field_key)

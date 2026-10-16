@@ -36,6 +36,7 @@ from ..seed import seed_defaults
 from .generate_full_benchmark_plans import LABEL_TEXT, ALT_LABEL_TEXT
 
 PLANS_DIR = Path(__file__).resolve().parent.parent.parent.parent / "testdata" / "titleblocks_full"
+FRESH_PLANS_DIR = Path(__file__).resolve().parent.parent.parent.parent / "testdata" / "titleblocks_fresh_acceptance"
 TEST_DB_PATH = Path(__file__).resolve().parent.parent.parent.parent / "data" / "test_p28_benchmark.db"
 REPORTS_DIR = Path(__file__).resolve().parent.parent.parent.parent / "testdata" / "benchmark_reports"
 
@@ -129,8 +130,23 @@ def _classify_cause(
     return "OCR-Lesefehler oder falsch abgegrenzte Zelle (keine eindeutige Ursache automatisch zuordenbar)"
 
 
-def run_full_benchmark() -> dict:
-    solutions_path = PLANS_DIR / "loesungen.json"
+def _dominant_plan_note(cases: list[dict], min_total: int = 3, threshold: float = 0.4) -> str | None:
+    """Warnt, wenn ein einzelner Plan einen unverhaeltnismaessig grossen
+    Anteil einer Fallliste ausmacht - sonst liest sich z.B. '12 falsch-
+    gruene Faelle' nach einem breiten Problem, obwohl es vielleicht nur
+    EIN kaputter Plan mit vielen Feldern ist."""
+    if len(cases) < min_total:
+        return None
+    counts = Counter(c["filename"] for c in cases)
+    filename, n = counts.most_common(1)[0]
+    share = n / len(cases)
+    if share >= threshold:
+        return f"{filename} macht {n} von {len(cases)} Faellen aus ({share*100:.0f}%) - dominiert diese Liste."
+    return None
+
+
+def run_full_benchmark(plans_dir: Path = PLANS_DIR, run_label: str = "haupt") -> dict:
+    solutions_path = plans_dir / "loesungen.json"
     if not solutions_path.exists():
         raise FileNotFoundError(
             f"Keine Loesungsdatei unter {solutions_path} - erst "
@@ -169,7 +185,7 @@ def run_full_benchmark() -> dict:
         customer_id = customers_by_object[meta["object_id"]]
 
         document = TitleblockDocument(
-            customer_id=customer_id, filename=filename, stored_path=str(PLANS_DIR / filename)
+            customer_id=customer_id, filename=filename, stored_path=str(plans_dir / filename)
         )
         db.add(document)
         db.commit()
@@ -280,7 +296,15 @@ def run_full_benchmark() -> dict:
 
     top_causes = cause_counter.most_common(3)
 
+    dominant_plan_notes = {
+        "false_green": _dominant_plan_note(false_green_cases),
+        "no_result": _dominant_plan_note(no_result_cases),
+        "other_wrong": _dominant_plan_note(other_wrong_cases),
+    }
+    dominant_plan_notes = {k: v for k, v in dominant_plan_notes.items() if v}
+
     report = {
+        "run_label": run_label,
         "run_at": datetime.utcnow().isoformat(),
         "plan_count": len(solutions),
         "dev_count": sum(1 for m in solutions.values() if m["split"] == "dev"),
@@ -306,6 +330,7 @@ def run_full_benchmark() -> dict:
         },
         "cross_document_consistency": consistency_findings,
         "top_causes": [{"cause": c, "count": n} for c, n in top_causes],
+        "dominant_plan_notes": dominant_plan_notes,
     }
 
     db.close()
@@ -319,9 +344,9 @@ def _fmt_pct(x) -> str:
     return f"{x*100:.1f}%" if x is not None else "n/v"
 
 
-def _write_markdown(report: dict, path: Path) -> None:
-    lines = []
-    lines.append(f"# P28 Pruefstand-Bericht - {report['run_at']}")
+def _append_report_markdown(report: dict, lines: list[str]) -> None:
+    label = report.get("run_label", "haupt")
+    lines.append(f"# P28 Pruefstand-Bericht [{label}] - {report['run_at']}")
     lines.append("")
     lines.append(f"Testplaene gesamt: {report['plan_count']} "
                  f"(dev={report['dev_count']}, acceptance={report['acceptance_count']}, "
@@ -334,24 +359,28 @@ def _write_markdown(report: dict, path: Path) -> None:
 
     for split in ("dev", "acceptance"):
         o = report["overall"][split]
-        lines.append(f"## Gruppe: {split} (n={o['n']})")
-        lines.append(f"- Trefferquote gesamt: **{_fmt_pct(o['hit_rate'])}**")
+        if o["n"] == 0:
+            continue
+        lines.append(f"## Gruppe: {split} (n={o['n']} Felder)")
+        lines.append(f"- Trefferquote gesamt: **{_fmt_pct(o['hit_rate'])}** (n={o['n']})")
         lines.append(f"- Falsch-gruen-Quote: **{_fmt_pct(o['false_green_rate'])}** (Ziel: nahe 0; n_gruen={o['n_green']})")
-        lines.append(f"- Anteil ohne Ergebnis (rot): {_fmt_pct(o['no_result_rate'])}")
+        lines.append(f"- Anteil ohne Ergebnis (rot): {_fmt_pct(o['no_result_rate'])} (n={o['n']})")
         lines.append("")
         lines.append("Je Feld:")
         for k, r in sorted(report["per_field"][split].items()):
-            lines.append(f"  - {k}: Treffer {_fmt_pct(r['hit_rate'])}, falsch-gruen {_fmt_pct(r['false_green_rate'])} (n={r['n']})")
+            lines.append(f"  - {k}: Treffer {_fmt_pct(r['hit_rate'])} (n={r['n']}), falsch-gruen {_fmt_pct(r['false_green_rate'])} (n_gruen={r['n_green']})")
         lines.append("")
         lines.append("Je Layout-Typ:")
         for k, r in sorted(report["per_layout_type"][split].items()):
-            lines.append(f"  - {k}: Treffer {_fmt_pct(r['hit_rate'])}, falsch-gruen {_fmt_pct(r['false_green_rate'])} (n={r['n']})")
+            lines.append(f"  - {k}: Treffer {_fmt_pct(r['hit_rate'])} (n={r['n']}), falsch-gruen {_fmt_pct(r['false_green_rate'])} (n_gruen={r['n_green']})")
         lines.append("")
 
-    lines.append("## Falsch-gruene Faelle (wichtigste Liste)")
+    lines.append(f"## Falsch-gruene Faelle (n={len(report['false_green_cases'])})")
     if not report["false_green_cases"]:
         lines.append("Keine.")
     else:
+        if "false_green" in report["dominant_plan_notes"]:
+            lines.append(f"**Hinweis:** {report['dominant_plan_notes']['false_green']}")
         for c in report["false_green_cases"]:
             lines.append(
                 f"- [{c['split']}] {c['filename']} / Feld '{c['field_key']}': "
@@ -359,10 +388,10 @@ def _write_markdown(report: dict, path: Path) -> None:
             )
     lines.append("")
 
-    lines.append("## Stichprobenkontrolle (automatisiert anhand der Loesungsdatei)")
+    lines.append(f"## Stichprobenkontrolle (automatisiert anhand der Loesungsdatei, n={report['sample_check']['total_sampled']})")
     sc = report["sample_check"]
     lines.append(f"- Vorgelegte gruene Zellen: {sc['total_sampled']}")
-    lines.append(f"- davon falsch: {sc['wrong']} ({_fmt_pct(sc['wrong_rate'])})")
+    lines.append(f"- davon falsch: {sc['wrong']} von {sc['total_sampled']} ({_fmt_pct(sc['wrong_rate'])})")
     lines.append(f"- {sc['note']}")
     lines.append("")
 
@@ -374,10 +403,22 @@ def _write_markdown(report: dict, path: Path) -> None:
             lines.append(f"- Objekt {f['object_id']}: {f['values_found']}")
     lines.append("")
 
-    lines.append("## Drei haeufigste Fehlerursachen")
+    lines.append(f"## Drei haeufigste Fehlerursachen (Basis: {sum(i['count'] for i in report['top_causes'])} von allen Fehlfaellen)")
     for item in report["top_causes"]:
         lines.append(f"- {item['cause']} ({item['count']}x)")
+    for key, note in report["dominant_plan_notes"].items():
+        if key != "false_green":
+            lines.append(f"\n**Hinweis ({key}):** {note}")
+    lines.append("")
 
+
+def _write_markdown(report: dict, path: Path, extra_report: dict | None = None) -> None:
+    lines: list[str] = []
+    _append_report_markdown(report, lines)
+    if extra_report is not None:
+        lines.append("---")
+        lines.append("")
+        _append_report_markdown(extra_report, lines)
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
@@ -412,15 +453,20 @@ def store_run(report: dict, json_path: Path, md_path: Path) -> None:
 
 
 if __name__ == "__main__":
-    report = run_full_benchmark()
+    report = run_full_benchmark(PLANS_DIR, run_label="haupt (31+ Plaene, dev/acceptance)")
+
+    fresh_report = None
+    if (FRESH_PLANS_DIR / "loesungen.json").exists():
+        fresh_report = run_full_benchmark(FRESH_PLANS_DIR, run_label="frische Abnahmegruppe (neuer Zufallswert, nie zum Nachbessern verwendet)")
 
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     stamp = datetime.utcnow().strftime("%Y-%m-%d_%H%M%S")
     json_path = REPORTS_DIR / f"p28_report_{stamp}.json"
     md_path = REPORTS_DIR / f"p28_report_{stamp}.md"
 
-    json_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
-    _write_markdown(report, md_path)
+    combined = {"main": report, "fresh_acceptance": fresh_report}
+    json_path.write_text(json.dumps(combined, ensure_ascii=False, indent=2), encoding="utf-8")
+    _write_markdown(report, md_path, fresh_report)
     store_run(report, json_path, md_path)
 
     print(f"Bericht gespeichert: {md_path}")
@@ -428,4 +474,7 @@ if __name__ == "__main__":
     print()
     for split in ("dev", "acceptance"):
         o = report["overall"][split]
-        print(f"[{split}] Trefferquote={_fmt_pct(o['hit_rate'])}  Falsch-gruen={_fmt_pct(o['false_green_rate'])}  Ohne Ergebnis={_fmt_pct(o['no_result_rate'])}")
+        print(f"[Haupt/{split}] Trefferquote={_fmt_pct(o['hit_rate'])}  Falsch-gruen={_fmt_pct(o['false_green_rate'])}  Ohne Ergebnis={_fmt_pct(o['no_result_rate'])}")
+    if fresh_report is not None:
+        o = fresh_report["overall"]["acceptance"]
+        print(f"[Frische Abnahmegruppe] Trefferquote={_fmt_pct(o['hit_rate'])}  Falsch-gruen={_fmt_pct(o['false_green_rate'])}  Ohne Ergebnis={_fmt_pct(o['no_result_rate'])}")

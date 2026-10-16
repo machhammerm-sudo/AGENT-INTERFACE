@@ -51,7 +51,7 @@
       "bauvorhaben": "Anbau Garage",
       "grundstuecksadresse": "Lindenweg 7"
     },
-    "split": "dev"
+    "split": "acceptance"
   },
   "obj-a_sheet04_rotated90.png": {
     "template_id": "OBJ-A_rotated90_inter",
@@ -90,7 +90,7 @@
       "massstab": "1:50",
       "index": "B"
     },
-    "split": "acceptance"
+    "split": "dev"
   },
   "obj-a_sheet06_rotated270.png": {
     "template_id": "OBJ-A_rotated270_serif",
@@ -150,7 +150,7 @@
       "massstab": "1:50",
       "index": "B"
     },
-    "split": "dev"
+    "split": "acceptance"
   },
   "obj-b_sheet01_right_strip.png": {
     "template_id": "OBJ-B_right_strip_dejavu",
@@ -170,7 +170,7 @@
       "massstab": "1:100",
       "index": "A"
     },
-    "split": "acceptance"
+    "split": "dev"
   },
   "obj-b_sheet02_top.png": {
     "template_id": "OBJ-B_top_serif",
@@ -224,7 +224,7 @@
       "massstab": "1:100",
       "index": "A"
     },
-    "split": "dev"
+    "split": "acceptance"
   },
   "obj-b_sheet05_rotated270.png": {
     "template_id": "OBJ-B_rotated270_dejavu",
@@ -244,7 +244,7 @@
       "massstab": "1:50",
       "index": "B"
     },
-    "split": "acceptance"
+    "split": "dev"
   },
   "obj-b_sheet06_no_frame.png": {
     "template_id": "OBJ-B_no_frame_serif",
@@ -264,7 +264,7 @@
       "massstab": "1:200",
       "index": "C"
     },
-    "split": "acceptance"
+    "split": "dev"
   },
   "obj-b_sheet07_bottom_right.png": {
     "template_id": "OBJ-B_bottom_right_freesans",
@@ -304,7 +304,7 @@
       "massstab": "1:50",
       "index": "B"
     },
-    "split": "dev"
+    "split": "acceptance"
   },
   "obj-c_sheet01_top.png": {
     "template_id": "OBJ-C_top_dejavu",
@@ -318,7 +318,7 @@
       "bauvorhaben": "Dachgeschossausbau",
       "grundstuecksadresse": "Rosenstrasse 19"
     },
-    "split": "dev"
+    "split": "acceptance"
   },
   "obj-c_sheet02_rotated90.png": {
     "template_id": "OBJ-C_rotated90_serif",
@@ -338,7 +338,7 @@
       "massstab": "1:50",
       "index": "B"
     },
-    "split": "acceptance"
+    "split": "dev"
   },
   "obj-c_sheet03_no_frame.png": {
     "template_id": "OBJ-C_no_frame_freesans",
@@ -398,7 +398,7 @@
       "massstab": "1:50",
       "index": "B"
     },
-    "split": "dev"
+    "split": "acceptance"
   },
   "obj-c_sheet06_bottom_right.png": {
     "template_id": "OBJ-C_bottom_right_serif",
@@ -418,7 +418,7 @@
       "massstab": "1:200",
       "index": "C"
     },
-    "split": "acceptance"
+    "split": "dev"
   },
   "obj-c_sheet07_right_strip.png": {
     "template_id": "OBJ-C_right_strip_freesans",
@@ -438,7 +438,7 @@
       "massstab": "1:100",
       "index": "A"
     },
-    "split": "acceptance"
+    "split": "dev"
   },
   "obj-d_sheet01_top.png": {
     "template_id": "OBJ-D_top_inter",
@@ -472,7 +472,7 @@
       "massstab": "1:50",
       "index": "B"
     },
-    "split": "dev"
+    "split": "acceptance"
   },
   "obj-d_sheet03_rotated180.png": {
     "template_id": "OBJ-D_rotated180_serif",
@@ -492,7 +492,7 @@
       "massstab": "1:200",
       "index": "C"
     },
-    "split": "dev"
+    "split": "acceptance"
   },
   "obj-d_sheet04_rotated270.png": {
     "template_id": "OBJ-D_rotated270_freesans",
@@ -512,7 +512,7 @@
       "massstab": "1:100",
       "index": "A"
     },
-    "split": "acceptance"
+    "split": "dev"
   },
   "obj-d_sheet05_no_frame.png": {
     "template_id": "OBJ-D_no_frame_inter",
@@ -551,7 +551,7 @@
       "massstab": "1:200",
       "index": "C"
     },
-    "split": "acceptance"
+    "split": "dev"
   },
   "obj-d_sheet07_right_strip.png": {
     "template_id": "OBJ-D_right_strip_serif",
@@ -569,6 +569,86 @@
       "plannummer": "OBJ-D-07",
       "datum": "18.02.2026",
       "massstab": "1:100",
+      "index": "A"
+    },
+    "split": "dev"
+  },
+  "textlayer_plan.pdf": {
+    "template_id": "textlayer",
+    "layout_type": "textlayer",
+    "object_id": "OBJ-A",
+    "error_type": null,
+    "notes": "Echtes PDF mit Textebene (reportlab), kein gerastertes Bild.",
+    "fields": {
+      "bauherr": "Petra Gruber",
+      "planverfasser": "Architekturbuero Sued",
+      "bauvorhaben": "Anbau Garage",
+      "grundstuecksadresse": "Lindenweg 7",
+      "gemeinde": "Seehausen",
+      "flurstueck": "118/2",
+      "plannummer": "OBJ-A-TXT",
+      "datum": "04.02.2026",
+      "massstab": "1:100",
+      "index": "A"
+    },
+    "split": "acceptance"
+  },
+  "obj-b_scan_noise.png": {
+    "template_id": "OBJ-B_scan_noise",
+    "layout_type": "bottom_right",
+    "object_id": "OBJ-B",
+    "error_type": "scan_noise",
+    "notes": "Simuliertes Scanner-Bildrauschen (zusaetzlich zur bisherigen Schiefstand/Unschaerfe-Variante).",
+    "fields": {
+      "bauherr": "Thomas Berger",
+      "planverfasser": "Buero Hoch Drei",
+      "bauvorhaben": "Neubau Doppelhaus",
+      "grundstuecksadresse": "Birkenallee 4",
+      "gemeinde": "Waldkirch",
+      "flurstueck": "340",
+      "plannummer": "OBJ-B-scan_noise",
+      "datum": "11.02.2026",
+      "massstab": "1:100",
+      "index": "B"
+    },
+    "split": "acceptance"
+  },
+  "obj-b_scan_jpeg.png": {
+    "template_id": "OBJ-B_scan_jpeg",
+    "layout_type": "bottom_right",
+    "object_id": "OBJ-B",
+    "error_type": "scan_jpeg",
+    "notes": "Simulierte verlustbehaftete JPEG-Kompression.",
+    "fields": {
+      "bauherr": "Thomas Berger",
+      "planverfasser": "Buero Hoch Drei",
+      "bauvorhaben": "Neubau Doppelhaus",
+      "grundstuecksadresse": "Birkenallee 4",
+      "gemeinde": "Waldkirch",
+      "flurstueck": "340",
+      "plannummer": "OBJ-B-scan_jpeg",
+      "datum": "11.02.2026",
+      "massstab": "1:100",
+      "index": "B"
+    },
+    "split": "dev"
+  },
+  "a1_format_plan.png": {
+    "template_id": "a1_format",
+    "layout_type": "a1_format",
+    "object_id": "OBJ-C",
+    "error_type": null,
+    "notes": "Plan im A1-Format (deutlich groesser als die uebrigen A4-Testplaene).",
+    "fields": {
+      "bauherr": "Nina Keller",
+      "planverfasser": "Planwerk Keller und Partner",
+      "bauvorhaben": "Dachgeschossausbau",
+      "grundstuecksadresse": "Rosenstrasse 19",
+      "gemeinde": "Bergstetten",
+      "flurstueck": "76/5",
+      "plannummer": "OBJ-C-A1",
+      "datum": "18.02.2026",
+      "massstab": "1:200",
       "index": "A"
     },
     "split": "dev"

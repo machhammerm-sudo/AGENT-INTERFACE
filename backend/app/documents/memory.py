@@ -103,6 +103,7 @@ def memory_candidates_for_field(
     data = pytesseract.image_to_data(crop, lang="deu+eng", output_type=pytesseract.Output.DICT)
     confs = [float(c) for c in data["conf"] if float(c) >= 0]
     ocr_conf = sum(confs) / len(confs) if confs else 0.0
+    min_conf = min(confs) if confs else 0.0
 
     return FieldCandidate(
         value=text,
@@ -111,6 +112,7 @@ def memory_candidates_for_field(
         match_type="memory",
         label_score=100.0,
         rel_bbox=(memory.rel_x, memory.rel_y, memory.rel_w, memory.rel_h),
+        min_word_confidence=min_conf,
     )
 
 

@@ -1,0 +1,230 @@
+{
+  "obj-e_sheet01_bottom_right.png": {
+    "template_id": "OBJ-E_bottom_right_freesans",
+    "layout_type": "bottom_right",
+    "object_id": "OBJ-E",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Claudia Brunner",
+      "planverfasser": "Atelier Brunner Bau",
+      "bauvorhaben": "Carport mit Abstellraum",
+      "grundstuecksadresse": "Talstrasse 23",
+      "gemeinde": "Felsbach",
+      "flurstueck": "502/1",
+      "plannummer": "OBJ-E-01",
+      "datum": "04.02.2026",
+      "massstab": "1:100",
+      "index": "A"
+    },
+    "split": "acceptance"
+  },
+  "obj-e_sheet02_right_strip.png": {
+    "template_id": "OBJ-E_right_strip_dejavu",
+    "layout_type": "right_strip",
+    "object_id": "OBJ-E",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Claudia Brunner",
+      "planverfasser": "Atelier Brunner Bau",
+      "bauvorhaben": "Carport mit Abstellraum",
+      "grundstuecksadresse": "Talstrasse 23",
+      "gemeinde": "Felsbach",
+      "flurstueck": "502/1",
+      "plannummer": "OBJ-E-02",
+      "datum": "11.02.2026",
+      "massstab": "1:50",
+      "index": "B"
+    },
+    "split": "acceptance"
+  },
+  "obj-e_sheet03_top.png": {
+    "template_id": "OBJ-E_top_freesans",
+    "layout_type": "top",
+    "object_id": "OBJ-E",
+    "error_type": "missing_date",
+    "notes": "Plandatum fehlt (absichtlich).",
+    "fields": {
+      "bauherr": "Claudia Brunner",
+      "planverfasser": "Atelier Brunner Bau",
+      "bauvorhaben": "Carport mit Abstellraum",
+      "grundstuecksadresse": "Talstrasse 23"
+    },
+    "split": "acceptance"
+  },
+  "obj-e_sheet04_rotated90.png": {
+    "template_id": "OBJ-E_rotated90_freesans",
+    "layout_type": "rotated90",
+    "object_id": "OBJ-E",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Claudia Brunner",
+      "planverfasser": "Atelier Brunner Bau",
+      "bauvorhaben": "Carport mit Abstellraum",
+      "grundstuecksadresse": "Talstrasse 23",
+      "gemeinde": "Felsbach",
+      "flurstueck": "502/1",
+      "plannummer": "OBJ-E-04",
+      "datum": "25.02.2026",
+      "massstab": "1:100",
+      "index": "A"
+    },
+    "split": "acceptance"
+  },
+  "obj-e_sheet05_rotated180.png": {
+    "template_id": "OBJ-E_rotated180_inter",
+    "layout_type": "rotated180",
+    "object_id": "OBJ-E",
+    "error_type": "decoy_text",
+    "notes": "Taeuschungstext ausserhalb des Titelblocks (absichtlich).",
+    "fields": {
+      "bauherr": "Claudia Brunner",
+      "planverfasser": "Atelier Brunner Bau",
+      "bauvorhaben": "Carport mit Abstellraum",
+      "grundstuecksadresse": "Talstrasse 23",
+      "gemeinde": "Felsbach",
+      "flurstueck": "502/1",
+      "plannummer": "OBJ-E-05",
+      "datum": "04.02.2026",
+      "massstab": "1:50",
+      "index": "B"
+    },
+    "split": "acceptance"
+  },
+  "obj-e_sheet06_no_frame.png": {
+    "template_id": "OBJ-E_no_frame_inter",
+    "layout_type": "no_frame",
+    "object_id": "OBJ-E",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Claudia Brunner",
+      "planverfasser": "Atelier Brunner Bau",
+      "bauvorhaben": "Carport mit Abstellraum",
+      "grundstuecksadresse": "Talstrasse 23",
+      "gemeinde": "Felsbach",
+      "flurstueck": "502/1",
+      "plannummer": "OBJ-E-06",
+      "datum": "11.02.2026",
+      "massstab": "1:200",
+      "index": "C"
+    },
+    "split": "acceptance"
+  },
+  "obj-f_sheet01_bottom_right.png": {
+    "template_id": "OBJ-F_bottom_right_serif",
+    "layout_type": "bottom_right",
+    "object_id": "OBJ-F",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Markus Fink",
+      "planverfasser": "Fink + Weber Architekten",
+      "bauvorhaben": "Erweiterung Werkstatt",
+      "grundstuecksadresse": "Industrieweg 9",
+      "gemeinde": "Hochried",
+      "flurstueck": "17",
+      "plannummer": "OBJ-F-01",
+      "datum": "04.02.2026",
+      "massstab": "1:100",
+      "index": "A"
+    },
+    "split": "acceptance"
+  },
+  "obj-f_sheet02_right_strip.png": {
+    "template_id": "OBJ-F_right_strip_dejavu",
+    "layout_type": "right_strip",
+    "object_id": "OBJ-F",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Markus Fink",
+      "planverfasser": "Fink + Weber Architekten",
+      "bauvorhaben": "Erweiterung Werkstatt",
+      "grundstuecksadresse": "Industrieweg 9",
+      "gemeinde": "Hochried",
+      "flurstueck": "17",
+      "plannummer": "OBJ-F-02",
+      "datum": "11.02.2026",
+      "massstab": "1:50",
+      "index": "B"
+    },
+    "split": "acceptance"
+  },
+  "obj-f_sheet03_top.png": {
+    "template_id": "OBJ-F_top_freesans",
+    "layout_type": "top",
+    "object_id": "OBJ-F",
+    "error_type": "missing_date",
+    "notes": "Plandatum fehlt (absichtlich).",
+    "fields": {
+      "bauherr": "Markus Fink",
+      "planverfasser": "Fink + Weber Architekten",
+      "bauvorhaben": "Erweiterung Werkstatt",
+      "grundstuecksadresse": "Industrieweg 9"
+    },
+    "split": "acceptance"
+  },
+  "obj-f_sheet04_rotated90.png": {
+    "template_id": "OBJ-F_rotated90_serif",
+    "layout_type": "rotated90",
+    "object_id": "OBJ-F",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Markus Fink",
+      "planverfasser": "Fink + Weber Architekten",
+      "bauvorhaben": "Erweiterung Werkstatt",
+      "grundstuecksadresse": "Industrieweg 9",
+      "gemeinde": "Hochried",
+      "flurstueck": "17",
+      "plannummer": "OBJ-F-04",
+      "datum": "25.02.2026",
+      "massstab": "1:100",
+      "index": "A"
+    },
+    "split": "acceptance"
+  },
+  "obj-f_sheet05_rotated180.png": {
+    "template_id": "OBJ-F_rotated180_dejavu",
+    "layout_type": "rotated180",
+    "object_id": "OBJ-F",
+    "error_type": "decoy_text",
+    "notes": "Taeuschungstext ausserhalb des Titelblocks (absichtlich).",
+    "fields": {
+      "bauherr": "Markus Fink",
+      "planverfasser": "Fink + Weber Architekten",
+      "bauvorhaben": "Erweiterung Werkstatt",
+      "grundstuecksadresse": "Industrieweg 9",
+      "gemeinde": "Hochried",
+      "flurstueck": "17",
+      "plannummer": "OBJ-F-05",
+      "datum": "04.02.2026",
+      "massstab": "1:50",
+      "index": "B"
+    },
+    "split": "acceptance"
+  },
+  "obj-f_sheet06_no_frame.png": {
+    "template_id": "OBJ-F_no_frame_freesans",
+    "layout_type": "no_frame",
+    "object_id": "OBJ-F",
+    "error_type": null,
+    "notes": "",
+    "fields": {
+      "bauherr": "Markus Fink",
+      "planverfasser": "Fink + Weber Architekten",
+      "bauvorhaben": "Erweiterung Werkstatt",
+      "grundstuecksadresse": "Industrieweg 9",
+      "gemeinde": "Hochried",
+      "flurstueck": "17",
+      "plannummer": "OBJ-F-06",
+      "datum": "11.02.2026",
+      "massstab": "1:200",
+      "index": "C"
+    },
+    "split": "acceptance"
+  }
+}
